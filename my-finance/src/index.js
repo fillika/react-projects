@@ -6,12 +6,14 @@ import * as serviceWorker from './serviceWorker';
 
 import { ThemeProvider } from '@material-ui/styles';
 import { theme } from './common/theme/theme';
-
+import { BrowserRouter as Router } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <App/>
+      <Router>
+        <App/>
+      </Router>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root'),

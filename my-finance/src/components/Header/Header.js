@@ -10,7 +10,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  useMediaQuery
+  useMediaQuery,
 } from '@material-ui/core';
 import { useStyles } from './useStyles';
 import clsx from 'clsx';
@@ -19,10 +19,11 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 import MonetizationOnOutlinedIcon from '@material-ui/icons/MonetizationOnOutlined';
 import IndeterminateCheckBoxOutlinedIcon from '@material-ui/icons/IndeterminateCheckBoxOutlined';
+import { Link } from 'react-router-dom';
 
 const Header = props => {
   const classes = useStyles();
-  const matches = useMediaQuery('(min-width: 600px)')
+  const matches = useMediaQuery('(min-width: 600px)');
   const iconSize = matches ? 'large' : 'default'; // определяю размер иконок
   const [open, setOpen] = useState(false);
 
@@ -35,11 +36,11 @@ const Header = props => {
     [classes.drawerClose]: !open,
   });
 
-  /**
-   * Функция переключает состояние переменной open
-   */
-  const handleDrawerToggle = () => {
-    setOpen(!open);
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+  const handleDrawerOpen = () => {
+    setOpen(true);
   };
 
   return (
@@ -50,12 +51,16 @@ const Header = props => {
 
         <Toolbar>
           <IconButton
-            onClick={handleDrawerToggle}
+            onClick={handleDrawerOpen}
             color='secondary'
             edge='start'>
             <MenuIcon/>
           </IconButton>
-          <Typography variant='h5'>My finance</Typography>
+          <Typography variant='h5'>
+            <Link to='/'>
+              My finance
+            </Link>
+          </Typography>
         </Toolbar>
       </AppBar>
 
@@ -66,34 +71,40 @@ const Header = props => {
 
         <div className={classes.toolbar}>
           <IconButton>
-            <ArrowBackIcon onClick={handleDrawerToggle}/>
+            <ArrowBackIcon onClick={handleDrawerClose}/>
           </IconButton>
         </div>
         <Divider/>
 
         <List>
-          <ListItem button>
-            <ListItemIcon>
-              <AccountBalanceWalletIcon fontSize={iconSize}/>
-            </ListItemIcon>
-            <ListItemText>Balance</ListItemText>
-          </ListItem>
+          <Link onClick={handleDrawerClose} to='/balance/'>
+            <ListItem button>
+              <ListItemIcon>
+                <AccountBalanceWalletIcon fontSize={iconSize}/>
+              </ListItemIcon>
+              <ListItemText>Balance</ListItemText>
+            </ListItem>
+          </Link>
 
+          <Link onClick={handleDrawerClose} to='/income/'>
+            <ListItem button>
+              <ListItemIcon>
+                <MonetizationOnOutlinedIcon fontSize={iconSize}/>
+              </ListItemIcon>
+              <ListItemText>Income</ListItemText>
+            </ListItem>
+          </Link>
 
-          <ListItem button>
-            <ListItemIcon>
-              <MonetizationOnOutlinedIcon fontSize={iconSize}/>
-            </ListItemIcon>
-            <ListItemText>Income</ListItemText>
-          </ListItem>
-
-          <ListItem button>
-            <ListItemIcon>
-              <IndeterminateCheckBoxOutlinedIcon fontSize={iconSize}/>
-            </ListItemIcon>
-            <ListItemText>Expenses</ListItemText>
-          </ListItem>
+          <Link onClick={handleDrawerClose} to='/expenses/'>
+            <ListItem button>
+              <ListItemIcon>
+                <IndeterminateCheckBoxOutlinedIcon fontSize={iconSize}/>
+              </ListItemIcon>
+              <ListItemText>Expenses</ListItemText>
+            </ListItem>
+          </Link>
         </List>
+
       </Drawer>
     </>
   );
