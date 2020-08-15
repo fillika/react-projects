@@ -70,8 +70,8 @@ const Header = props => {
         variant='permanent'>
 
         <div className={classes.toolbar}>
-          <IconButton>
-            <ArrowBackIcon onClick={handleDrawerClose}/>
+          <IconButton onClick={handleDrawerClose}>
+            <ArrowBackIcon />
           </IconButton>
         </div>
         <Divider/>

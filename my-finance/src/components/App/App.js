@@ -3,7 +3,7 @@ import './App.scss';
 import {
   Container,
   Typography,
-  TextField
+  TextField,
 } from '@material-ui/core';
 import Header from '../Header/Header';
 import { makeStyles } from '@material-ui/styles';
@@ -11,6 +11,7 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
+import Income from '../Income/Income';
 
 const useStyles = makeStyles(({ spacing, breakpoints, palette }) => ({
   container: {
@@ -21,9 +22,8 @@ const useStyles = makeStyles(({ spacing, breakpoints, palette }) => ({
     },
   },
   root: {
-    backgroundColor: palette.secondary.main,
+    backgroundColor: '#fff',
     height: '100vh',
-    color: '#fff',
   },
 }));
 
@@ -36,7 +36,7 @@ function App() {
 
       <Container
         className={classes.container}
-        maxWidth='xl'>
+        maxWidth='lg'>
 
         <Switch>
           <Route
@@ -50,7 +50,9 @@ function App() {
           <Route
             exact
             path='/balance/'>
-            <Typography align='center' variant='h2'>
+            <Typography
+              align='center'
+              variant='h2'>
               Balance
             </Typography>
             <Typography variant='h4'>
@@ -70,37 +72,30 @@ function App() {
           <Route
             exact
             path='/income/'>
-            <Typography align='center' variant='h2'>
-              Доходы
-            </Typography>
-            <Typography>
-              Зарплата 70 000 руб
-            </Typography>
-            <Typography>
-              Проценты по кладам 365 руб
-            </Typography>
-            <Typography>
-              Телеграм-канал 20 000 руб
-            </Typography>
+
+            <Income classes={classes}/>
           </Route>
 
           <Route
             exact
             path='/expenses/'>
-            <Typography align='center' variant='h2'>
+            <Typography
+              align='center'
+              variant='h2'>
               Расходы
             </Typography>
 
-            <form color='primary' noValidate>
+            <form
+              color='primary'
+              noValidate>
               <TextField
-                id="datetime-local"
-                label="Next appointment"
-                type="date"
-                defaultValue="2017-05-24T10:30"
+                id='datetime-local'
+                label='Next appointment'
+                type='date'
+                defaultValue='2017-05-24T10:30'
                 InputLabelProps={{
                   shrink: true,
-                }}
-              />
+                }}/>
             </form>
 
             <Typography variant='h4'>

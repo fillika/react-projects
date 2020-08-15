@@ -1,0 +1,37 @@
+@import 'src/styles/mixins';
+
+.category {
+  cursor: pointer;
+
+  &__text {
+    display: inline-flex;
+    @include transition(500ms, background);
+
+    &:hover {
+      background: #ecf1f7;
+    }
+  }
+
+  &__button {
+    &--close {
+      transform: translateX(100%);
+    }
+  }
+
+  &:hover {
+    .category {
+      &__button {
+        @include transition();
+
+        &--close {
+          transform: translateX(0);
+        }
+      }
+
+      &__price {
+        @include transition(220ms, opacity);
+        opacity: 0;
+      }
+    }
+  }
+}
