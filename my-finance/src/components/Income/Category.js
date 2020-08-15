@@ -60,7 +60,7 @@ const useStyles = makeStyles(({ palette, spacing }) => ({
   dotDisable: {},
 }));
 
-const Category = ({ name, price }) => {
+const Category = ({ text, price, color }) => {
   const [isDisable, toggleDisable] = useState(false);
   const classes = useStyles();
 
@@ -69,12 +69,12 @@ const Category = ({ name, price }) => {
       <div className={clsx(classes.text, 'category__text')}>
         <div
           className={clsx(classes.dot, {})}
-          style={{ backgroundColor: isDisable ? 'rgba(51,51,51,.24)' : createRandomColor() }}/>
-        <div>{name}</div>
+          style={{ backgroundColor: isDisable ? 'rgba(51,51,51,.24)' : color }}/>
+        <div>{text}</div>
         <div
           className={clsx(classes.price, 'category__price')}>
-          {price.toLocaleString('ru-RU')}
-          <span>&nbsp;₽</span></div>
+          {price.toLocaleString('ru-RU')}<span>&nbsp;₽</span>
+        </div>
       </div>
       <IconButton
         onClick={() => toggleDisable(!isDisable)}
@@ -89,14 +89,3 @@ const Category = ({ name, price }) => {
 };
 
 export default Category;
-
-/**
- * Функция генерирует 3 случайных числа и создает строку с цветом
- * @return {string} строка со случайным цветом
- */
-const createRandomColor = () => {
-  const x = Math.floor(Math.random() * 255);
-  const y = Math.floor(Math.random() * 255);
-  const z = Math.floor(Math.random() * 255);
-  return `rgb(${x},${y},${z})`;
-};
