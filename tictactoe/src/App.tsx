@@ -1,10 +1,8 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import './App.scss';
 import { Table } from './components/Table';
 
 const App: FC = () => {
-  useEffect(() => {}, []);
-
   return (
     <div className='app'>
       <header>

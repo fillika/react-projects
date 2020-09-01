@@ -7,8 +7,12 @@
   height: 100px;
   width: 100px;
   cursor: pointer;
+
+  &--clicked {
+    background-color: red;
+    position: relative;
+  }
 }
 
 .selected {
-  
 }
