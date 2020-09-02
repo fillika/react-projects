@@ -4,6 +4,8 @@ export type TWinCombinations = number[];
 export type TCells = ICells[];
 export interface ICells {
   id: number;
+  selectedPerson: boolean;
+  selectedII: boolean;
 }
 
 export const winCombinations: TWinCombinations[] = [
@@ -18,9 +20,21 @@ export const winCombinations: TWinCombinations[] = [
 ];
 
 export const cells: TCells[] = [
-  [{ id: 0 }, { id: 1 }, { id: 2 }],
-  [{ id: 3 }, { id: 4 }, { id: 5 }],
-  [{ id: 6 }, { id: 7 }, { id: 8 }],
+  [
+    { id: 0, selectedPerson: false, selectedII: false },
+    { id: 1, selectedPerson: false, selectedII: false },
+    { id: 2, selectedPerson: false, selectedII: false },
+  ],
+  [
+    { id: 3, selectedPerson: false, selectedII: false },
+    { id: 4, selectedPerson: false, selectedII: false },
+    { id: 5, selectedPerson: false, selectedII: false },
+  ],
+  [
+    { id: 6, selectedPerson: false, selectedII: false },
+    { id: 7, selectedPerson: false, selectedII: false },
+    { id: 8, selectedPerson: false, selectedII: false },
+  ],
 ];
 
 export function startGame() {

@@ -8,6 +8,7 @@ type TTableTD = {
 };
 
 export const Table: FC = () => {
+  const [numbers, setNumbers] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8]);
   const [combinationPerson, setCombinationPerson] = useState<strOrNum[]>([]);
   const [combinationII, setCombinationII] = useState<strOrNum[]>([]);
 
@@ -18,6 +19,7 @@ export const Table: FC = () => {
      */
     if (combinationPerson.indexOf(id) === -1) {
       setCombinationPerson(() => [...combinationPerson, id]);
+      setNumbers(() => numbers.filter(number => number !== id));
     }
   }
 
@@ -34,20 +36,13 @@ export const Table: FC = () => {
      * Проверка защищает нас от хода ИИ при первичном рендере
      */
     if (combinationPerson.length !== 0) {
-      let numbersId = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-
-      const id = combinationPerson.forEach(num => {
-        const x = numbersId.filter(n => n !== num);
-        numbersId = x;
-
-        console.log(numbersId);
-
-        return numbersId;
-      });
-
-      console.log(id);
-
-      setCombinationII([...combinationII, 2]);
+      /**
+       * Индекс случайного числа в массиве. По нему Я получаю число,
+       * которое выбирает ИИ и вставляю его в массив чисел, которые он выбрал.
+       */
+      const index = Math.floor(Math.random() * numbers.length);
+      setCombinationII([...combinationII, numbers[index]]);
+      setNumbers(() => numbers.filter(number => number !== numbers[index]));
     }
   }, [combinationPerson]);
 
