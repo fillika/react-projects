@@ -2,14 +2,7 @@ import React from 'react';
 
 import { Grid, ListItem, List, Container, makeStyles, createStyles } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
-
-type TSecondLevelLinks = TLink[];
-
-type TLink = {
-  id: number;
-  name: string;
-  address: string;
-};
+import { TLevelLinks } from './index';
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -42,7 +35,7 @@ const useStyles = makeStyles(theme =>
   })
 );
 
-const secondLevelLinks: TSecondLevelLinks = [
+const secondLevelLinks: TLevelLinks = [
   {
     id: 1,
     name: 'Банк',
