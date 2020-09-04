@@ -1,34 +1,10 @@
 import React from 'react';
-import logoRus from '../images/logo_rus.svg';
-
-import { Button, Container, Box, Grid } from '@material-ui/core';
+import { Header } from './Header';
 
 export const App: React.FC = () => {
   return (
     <div>
-      <header>
-        <Container>
-          <div>
-            <Grid container spacing={1}>
-              <Grid item xs={2}>
-                <div>Бургер</div>
-              </Grid>
-
-              <Grid item xs={8}>
-                <img src={logoRus} alt='Тинькофф' />
-              </Grid>
-
-              <Grid item xs={2}>
-                <Box>
-                  <Button>Войти</Button>
-                </Box>
-              </Grid>
-            </Grid>
-          </div>
-          <div>Ряд 2</div>
-          <div>Ряд 3</div>
-        </Container>
-      </header>
+      <Header />
 
       <main>
         <div>
