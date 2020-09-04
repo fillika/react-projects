@@ -1,42 +1,44 @@
 import React from 'react';
 
-import { Grid, ListItem, List } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { Grid, ListItem, List, Container } from '@material-ui/core';
+import { NavLink } from 'react-router-dom';
 
 export const SecondLevelHeader: React.FC = () => {
   return (
-    <Grid container>
-      <Grid item>
-        <List>
-          <ListItem>
-            <Link to='/'>Банк</Link>
-          </ListItem>
+    <Container>
+      <Grid container>
+        <Grid item>
+          <List>
+            <ListItem>
+              <NavLink to='/'>Банк</NavLink>
+            </ListItem>
 
-          <ListItem>
-            <Link to='/'>Бизнес</Link>
-          </ListItem>
+            <ListItem>
+              <NavLink to='/'>Бизнес</NavLink>
+            </ListItem>
 
-          <ListItem>
-            <Link to='/'>Инвестиции</Link>
-          </ListItem>
+            <ListItem>
+              <NavLink to='/'>Инвестиции</NavLink>
+            </ListItem>
 
-          <ListItem>
-            <Link to='/'>Страхование</Link>
-          </ListItem>
+            <ListItem>
+              <NavLink to='/'>Страхование</NavLink>
+            </ListItem>
 
-          <ListItem>
-            <Link to='/'>Мобайл</Link>
-          </ListItem>
+            <ListItem>
+              <NavLink to='/'>Мобайл</NavLink>
+            </ListItem>
 
-          <ListItem>
-            <Link to='/'>Путешествия</Link>
-          </ListItem>
+            <ListItem>
+              <NavLink to='/'>Путешествия</NavLink>
+            </ListItem>
 
-          <ListItem>
-            <Link to='/'>Развлечения</Link>
-          </ListItem>
-        </List>
+            <ListItem>
+              <NavLink to='/'>Развлечения</NavLink>
+            </ListItem>
+          </List>
+        </Grid>
       </Grid>
-    </Grid>
+    </Container>
   );
 };

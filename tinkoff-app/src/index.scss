@@ -13,3 +13,11 @@ body {
   box-sizing: border-box;
   font-family: 'Fira Code', monospace;
 }
+
+a {
+  text-decoration: none;
+
+  &:visited {
+    color: inherit;
+  }
+}

@@ -1,32 +1,38 @@
 import React from 'react';
 import logoRus from '../../images/logo_rus.svg';
 
-import { Button, Box, Grid, IconButton } from '@material-ui/core';
+import { Button, Box, Grid, IconButton, useTheme, Container } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
 
 export const FirstLevelHeader: React.FC = () => {
+  const theme = useTheme();
+
   return (
-    <Grid container>
-      <Grid item xs={2}>
-        <IconButton edge='start' color='inherit' aria-label='menu'>
-          <MenuIcon />
-        </IconButton>
-      </Grid>
+    <div style={{ backgroundColor: theme.palette.grey[500] }}>
+      <Container>
+        <Grid justify='space-between' alignItems='center' container>
+          <Grid item>
+            <IconButton edge='start' color='inherit' aria-label='menu'>
+              <MenuIcon />
+            </IconButton>
+          </Grid>
 
-      <Grid item xs={7}>
-        <Link to='/'>
-          <img src={logoRus} alt='Тинькофф' />
-        </Link>
-      </Grid>
+          <Grid item xs>
+            <Link to='/'>
+              <img style={{ width: '150px' }} src={logoRus} alt='Тинькофф' />
+            </Link>
+          </Grid>
 
-      <Grid item xs={3}>
-        <Box>
-          <Link to='/lk'>
-            <Button>Войти</Button>
-          </Link>
-        </Box>
-      </Grid>
-    </Grid>
+          <Grid alignItems='flex-end' item>
+            <Link to='/lk'>
+              <Button style={{ boxShadow: theme.shadows[24], backgroundColor: '#fff' }} size='small'>
+                Войти
+              </Button>
+            </Link>
+          </Grid>
+        </Grid>
+      </Container>
+    </div>
   );
 };
