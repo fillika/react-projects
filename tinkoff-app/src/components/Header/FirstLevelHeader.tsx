@@ -26,7 +26,9 @@ export const FirstLevelHeader: React.FC = () => {
 
           <Grid alignItems='flex-end' item>
             <Link to='/lk'>
-              <Button style={{ boxShadow: theme.shadows[24], backgroundColor: '#fff' }} size='small'>
+              <Button
+                style={{ boxShadow: theme.shadows[24], backgroundColor: '#fff', fontSize: '0.55em' }}
+                size='small'>
                 Войти
               </Button>
             </Link>

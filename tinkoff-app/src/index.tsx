@@ -26,6 +26,7 @@ const theme = createMuiTheme({
       secondary: 'rgba(0,0,0,.8)',
     },
   },
+  typography: {},
 });
 
 /**
