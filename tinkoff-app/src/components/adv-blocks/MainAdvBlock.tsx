@@ -1,25 +1,74 @@
 import React from 'react';
-import { Container, Typography, Button, useTheme } from '@material-ui/core';
+import { Container, Typography, Button, useTheme, createStyles, makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles(theme =>
+  createStyles({
+    wrapper: {
+      backgroundColor: theme.palette.grey[500],
+      paddingTop: theme.spacing(2),
+    },
+    textWrapper: {
+      padding: `${theme.spacing(2)}px ${theme.spacing(3)}px`,
+      textAlign: 'center',
+    },
+    h1: {
+      fontSize: '1rem',
+    },
+    title: {
+      color: 'rgba(0,0,0,.8)',
+      fontSize: '1.2em',
+      fontWeight: 700,
+    },
+    subTitle: {
+      fontSize: '0.75em',
+      marginTop: theme.spacing(2),
+    },
+    imageWrapper: {
+      height: '328px',
+      overflow: 'hidden',
+      position: 'relative',
+    },
+    image: {
+      position: 'absolute',
+      left: '50%',
+      transform: 'translateX(-50%)',
+    },
+    buttonWrapper: {
+      position: 'absolute',
+      bottom: theme.spacing(4),
+      display: 'flex',
+      justifyContent: 'center',
+      width: '100%',
+    },
+    button: {
+      fontSize: '0.75em',
+      textTransform: 'initial',
+      paddingTop: theme.spacing(1) + 1,
+      paddingLeft: theme.spacing(3) - 1,
+      paddingRight: theme.spacing(3) - 1,
+      paddingBottom: theme.spacing(1) - 1,
+      fontWeight: 400,
+    },
+  })
+);
 
 export const MainAdvBlock: React.FC = () => {
-  const theme = useTheme();
+  const classes = useStyles();
 
   return (
-    <div style={{ backgroundColor: theme.palette.grey[500], paddingTop: theme.spacing(2) }}>
+    <div className={classes.wrapper}>
       <Container>
-        <div style={{ padding: `${theme.spacing(2)}px ${theme.spacing(3)}px`, textAlign: 'center' }}>
-          <Typography variant='h1' style={{ fontSize: '1rem' }}>
-            <Typography style={{ color: 'rgba(0,0,0,.8)', fontSize: '1.2em', fontWeight: 700 }}>
-              Счет для бизнеса
-            </Typography>
+        <div className={classes.textWrapper}>
+          <Typography className={classes.h1} variant='h1'>
+            <Typography className={classes.title}>Счет для бизнеса</Typography>
           </Typography>
-          <Typography style={{ fontSize: '0.75em', marginTop: theme.spacing(2) }}>
+          <Typography className={classes.subTitle}>
             До 3% на остаток. Открытие и обслуживание счета — от 0 рублей. Все онлайн
           </Typography>
         </div>
 
-        <div style={{ height: '328px', overflow: 'hidden', position: 'relative' }}>
-          <picture>
+        <div className={classes.imageWrapper}>
+          <picture className={classes.image}>
             <source
               srcSet='https://acdn.tinkoff.ru/static/pages/files/ea723822-d5e8-4c34-9cf0-159dec5f76bc.webp 1x, https://acdn.tinkoff.ru/static/pages/files/63b6cdcc-7f5e-4f6b-a499-9ee218be67c2.webp 2x'
               type='image/webp'
@@ -47,26 +96,8 @@ export const MainAdvBlock: React.FC = () => {
             />
           </picture>
 
-          <div
-            style={{
-              position: 'absolute',
-              bottom: theme.spacing(4),
-              display: 'flex',
-              justifyContent: 'center',
-              width: '100%',
-            }}>
-            <Button
-              style={{
-                fontSize: '0.75em',
-                textTransform: 'initial',
-                paddingTop: theme.spacing(1) + 1,
-                paddingLeft: theme.spacing(3) - 1,
-                paddingRight: theme.spacing(3) - 1,
-                paddingBottom: theme.spacing(1) - 1,
-                fontWeight: 400,
-              }}
-              variant='contained'
-              color='primary'>
+          <div className={classes.buttonWrapper}>
+            <Button className={classes.button} variant='contained' color='primary'>
               Открыть счет
             </Button>
           </div>
