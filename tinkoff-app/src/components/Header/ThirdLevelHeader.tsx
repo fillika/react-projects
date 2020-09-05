@@ -7,24 +7,14 @@ import { TLevelLinks } from './index';
 const useStyles = makeStyles(theme =>
   createStyles({
     list: {
+      padding: 0,
       whiteSpace: 'nowrap',
+      height: 44,
     },
     listItem: {
       paddingLeft: '0',
       display: 'inline-block',
       width: 'auto',
-
-      '&:hover': {
-        '&::before': {
-          content: '""',
-          display: 'inline-block',
-          position: 'absolute',
-          width: 'calc(100% - 16px)',
-          bottom: 0,
-          height: '2px',
-          backgroundColor: '#79818c',
-        },
-      },
     },
     navLink: {
       color: '#79818c',
@@ -41,24 +31,34 @@ const useStyles = makeStyles(theme =>
 
       '&.active': {
         color: theme.palette.text.primary,
+
+        '&::before': {
+          content: '""',
+          display: 'inline-block',
+          position: 'absolute',
+          width: '100%',
+          bottom: -(theme.spacing(2) - 4),
+          height: '2px',
+          backgroundColor: theme.palette.primary.main,
+        },
       },
 
       '&:hover': {
         color: '#333',
+
+        '&::before': {
+          content: '""',
+          display: 'inline-block',
+          position: 'absolute',
+          width: '100%',
+          bottom: '-10px',
+          height: '2px',
+          backgroundColor: '#79818c',
+        },
       },
     },
-    span: {
-      position: 'relative',
-
-      '&::before': {
-        content: '""',
-        display: 'inline-block',
-        position: 'absolute',
-        width: '100%',
-        bottom: 0,
-        height: '2px',
-        backgroundColor: '#79818c',
-      },
+    wrapper: {
+      boxShadow: theme.shadows[23],
     },
   })
 );
@@ -113,12 +113,14 @@ export const ThirdLevelHeader: React.FC = () => {
   ));
 
   return (
-    <Container>
-      <Grid container>
-        <Grid item style={{ overflowX: 'scroll' }}>
-          <List className={classes.list}>{createListItem}</List>
+    <div className={classes.wrapper}>
+      <Container>
+        <Grid container>
+          <Grid item style={{ overflowX: 'scroll' }}>
+            <List className={classes.list}>{createListItem}</List>
+          </Grid>
         </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </div>
   );
 };

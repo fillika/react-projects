@@ -26,13 +26,17 @@ const theme = createMuiTheme({
       secondary: 'rgba(0,0,0,.8)',
     },
   },
-  typography: {},
+  typography: {
+    fontFamily:
+      'Fira Code, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol',
+  },
 });
 
 /**
  * Переопределил посленим элементом массива свою тень
  */
-theme.shadows[24] = '0 2px 16px rgba(0,0,0,.08)';
+theme.shadows[23] = '0 10px 16px -6px rgba(0,0,0,.08)'; // Тень под меню 3 уровня
+theme.shadows[24] = '0 2px 16px rgba(0,0,0,.08)'; // Тень у кнопки
 
 ReactDOM.render(
   <React.StrictMode>

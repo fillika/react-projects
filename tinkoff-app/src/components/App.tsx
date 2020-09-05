@@ -1,5 +1,6 @@
 import React from 'react';
 import { Header } from './Header';
+import { Typography, Container, Button } from '@material-ui/core';
 
 export const App: React.FC = () => {
   return (
@@ -8,8 +9,22 @@ export const App: React.FC = () => {
 
       <main>
         <div>
-          <h2>Рекламный блок 1</h2>
-          <p>Тут текст и картинка</p>
+          <Container>
+            <Typography variant='h1'>
+              <Typography>Кредит наличными</Typography>
+            </Typography>
+            <Typography>До 15 млн рублей уже завтра</Typography>
+            <p>Тут текст и картинка</p>
+
+            <div style={{ height: '328px', overflow: 'hidden' }}>
+              <Button
+                style={{ fontFamily: 'Segoe UI', fontSize: '0.75em', textTransform: 'initial' }}
+                variant='contained'
+                color='primary'>
+                Получить
+              </Button>
+            </div>
+          </Container>
         </div>
 
         <div>

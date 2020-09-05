@@ -1,7 +1,7 @@
 import React from 'react';
 import logoRus from '../../images/logo_rus.svg';
 
-import { Button, Box, Grid, IconButton, useTheme, Container } from '@material-ui/core';
+import { Button, Grid, IconButton, useTheme, Container } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
 
@@ -24,7 +24,7 @@ export const FirstLevelHeader: React.FC = () => {
             </Link>
           </Grid>
 
-          <Grid alignItems='flex-end' item>
+          <Grid item>
             <Link to='/lk'>
               <Button
                 style={{ boxShadow: theme.shadows[24], backgroundColor: '#fff', fontSize: '0.55em' }}

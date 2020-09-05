@@ -8,6 +8,8 @@ const useStyles = makeStyles(theme =>
   createStyles({
     list: {
       display: 'flex',
+      padding: 0,
+      height: 44,
     },
     listItem: {
       paddingLeft: '0',
@@ -18,7 +20,7 @@ const useStyles = makeStyles(theme =>
       transitionDuration: '220ms',
       textTransform: 'uppercase',
       fontWeight: 500,
-      fontSize: '0.55em',
+      fontSize: '0.6em',
 
       '&:visited': {
         color: '#959ba4',
@@ -88,12 +90,14 @@ export const SecondLevelHeader: React.FC = () => {
   ));
 
   return (
-    <Container>
-      <Grid container>
-        <Grid style={{ overflowX: 'scroll' }} item>
-          <List className={classes.list}>{createListItem}</List>
+    <div style={{ boxShadow: 'inset 0 -1px 0 0 #e7e8ea' }}>
+      <Container>
+        <Grid container>
+          <Grid style={{ overflowX: 'scroll' }} item>
+            <List className={classes.list}>{createListItem}</List>
+          </Grid>
         </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </div>
   );
 };
