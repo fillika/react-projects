@@ -24,6 +24,7 @@ const useStyles = makeStyles(theme =>
       fontWeight: 500,
       fontSize: '0.65em',
       position: 'relative',
+      fontFamily: 'Segoe UI',
 
       '&:visited': {
         color: '#79818c',

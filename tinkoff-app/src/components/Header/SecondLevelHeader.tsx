@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme =>
       transitionDuration: '220ms',
       textTransform: 'uppercase',
       fontWeight: 500,
-      fontSize: '0.6em',
+      fontSize: '0.55em',
 
       '&:visited': {
         color: '#959ba4',
