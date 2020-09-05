@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Typography, Button, createStyles, makeStyles, useMediaQuery } from '@material-ui/core';
+import React from 'react';
+import { Container, createStyles, makeStyles, useMediaQuery } from '@material-ui/core';
 import { MobileContent } from './MobileContent';
 
 const useStyles = makeStyles(theme =>
