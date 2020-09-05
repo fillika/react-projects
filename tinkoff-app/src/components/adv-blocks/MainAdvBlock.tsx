@@ -10,11 +10,11 @@ export const MainAdvBlock: React.FC = () => {
         <div style={{ padding: `${theme.spacing(2)}px ${theme.spacing(3)}px`, textAlign: 'center' }}>
           <Typography variant='h1' style={{ fontSize: '1rem' }}>
             <Typography style={{ color: 'rgba(0,0,0,.8)', fontSize: '1.2em', fontWeight: 700 }}>
-              Кредит наличными
+              Счет для бизнеса
             </Typography>
           </Typography>
           <Typography style={{ fontSize: '0.75em', marginTop: theme.spacing(2) }}>
-            До 15 млн рублей уже завтра
+            До 3% на остаток. Открытие и обслуживание счета — от 0 рублей. Все онлайн
           </Typography>
         </div>
 
@@ -47,12 +47,29 @@ export const MainAdvBlock: React.FC = () => {
             />
           </picture>
 
-          <Button
-            style={{ fontFamily: 'Segoe UI', fontSize: '0.75em', textTransform: 'initial' }}
-            variant='contained'
-            color='primary'>
-            Получить
-          </Button>
+          <div
+            style={{
+              position: 'absolute',
+              bottom: theme.spacing(4),
+              display: 'flex',
+              justifyContent: 'center',
+              width: '100%',
+            }}>
+            <Button
+              style={{
+                fontSize: '0.75em',
+                textTransform: 'initial',
+                paddingTop: theme.spacing(1) + 1,
+                paddingLeft: theme.spacing(3) - 1,
+                paddingRight: theme.spacing(3) - 1,
+                paddingBottom: theme.spacing(1) - 1,
+                fontWeight: 400,
+              }}
+              variant='contained'
+              color='primary'>
+              Открыть счет
+            </Button>
+          </div>
         </div>
       </Container>
     </div>

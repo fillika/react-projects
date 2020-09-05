@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme =>
           display: 'inline-block',
           position: 'absolute',
           width: '100%',
-          bottom: -(theme.spacing(2) - 4),
+          bottom: -(theme.spacing(2) - 5),
           height: '2px',
           backgroundColor: theme.palette.primary.main,
         },
