@@ -189,12 +189,15 @@ const useStyles = makeStyles(theme =>
     wrapper: {
       backgroundColor: theme.palette.grey[500],
       paddingTop: theme.spacing(2),
-      '@media (min-width:768px)': {
-        height: '448px',
+      [theme.breakpoints.up('md')]: {
+        height: 434,
         paddingTop: 0,
       },
+      [theme.breakpoints.up('lg')]: {
+        height: 448,
+      },
       '@media (min-width: 1360px)': {
-        height: '480px',
+        height: 480,
       },
     },
   })
