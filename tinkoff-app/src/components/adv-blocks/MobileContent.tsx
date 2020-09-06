@@ -1,5 +1,7 @@
 import React from 'react';
 import { Typography, Button, createStyles, makeStyles, Container } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import { TComponentData } from './MainAdvBlock';
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -52,40 +54,43 @@ const useStyles = makeStyles(theme =>
   })
 );
 
-export const MobileContent: React.FC = () => {
+export const MobileContent: React.FC<TComponentData> = props => {
   const classes = useStyles();
+  const { title, subTitle, button } = props;
 
   return (
     <Container>
       <div className={classes.textWrapper}>
         <Typography className={classes.h1} variant='h1'>
-          <Typography className={classes.title}>Счет для бизнеса</Typography>
+          <Typography className={classes.title}>{title}</Typography>
         </Typography>
 
-        <Typography className={classes.subTitle}>
-          До 3% на остаток. Открытие и обслуживание счета — от 0 рублей. Все онлайн
-        </Typography>
+        <Typography className={classes.subTitle}>{subTitle}</Typography>
       </div>
 
       <div className={classes.imageWrapper}>
-        <picture className={classes.image}>
-          <source
-            srcSet='https://acdn.tinkoff.ru/static/pages/files/dde9e3e2-be0a-4689-a332-37f5b75c4e2f.webp 1x, https://acdn.tinkoff.ru/static/pages/files/7f093359-43b4-4b02-a3b9-283ea151d5d7.webp 2x'
-            type='image/webp'
-            media='(max-width: 768px)'
-          />
-          <img
-            alt='Мужчина с котенком'
-            loading='lazy'
-            src='https://acdn.tinkoff.ru/static/pages/files/918e68e9-a79c-4313-a676-ef51ecf21e1c.png'
-            srcSet='https://acdn.tinkoff.ru/static/pages/files/9ac19c7b-69d8-489f-b19c-1d578b53f7ad.png 2x'
-          />
-        </picture>
+        <div className={classes.image}>
+          <picture>
+            <source
+              srcSet='https://acdn.tinkoff.ru/static/pages/files/dde9e3e2-be0a-4689-a332-37f5b75c4e2f.webp 1x, https://acdn.tinkoff.ru/static/pages/files/7f093359-43b4-4b02-a3b9-283ea151d5d7.webp 2x'
+              type='image/webp'
+              media='(max-width: 768px)'
+            />
+            <img
+              alt='Мужчина с котенком'
+              loading='lazy'
+              src='https://acdn.tinkoff.ru/static/pages/files/918e68e9-a79c-4313-a676-ef51ecf21e1c.png'
+              srcSet='https://acdn.tinkoff.ru/static/pages/files/9ac19c7b-69d8-489f-b19c-1d578b53f7ad.png 2x'
+            />
+          </picture>
+        </div>
 
         <div className={classes.buttonWrapper}>
-          <Button className={classes.button} variant='contained' color='primary'>
-            Открыть счет
-          </Button>
+          <Link to={button.link}>
+            <Button className={classes.button} variant='contained' color='primary'>
+              {button.text}
+            </Button>
+          </Link>
         </div>
       </div>
     </Container>
