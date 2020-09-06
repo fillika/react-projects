@@ -12,8 +12,11 @@ const useStyles = makeStyles(theme =>
       height: 44,
     },
     listItem: {
-      paddingLeft: '0',
+      paddingLeft: 0,
+      paddingBottom: 0,
+      paddingTop: 0,
       display: 'inline-block',
+      lineHeight: 1.8,
       width: 'auto',
     },
     navLink: {
@@ -38,8 +41,8 @@ const useStyles = makeStyles(theme =>
           display: 'inline-block',
           position: 'absolute',
           width: '100%',
-          bottom: -(theme.spacing(2) - 5),
-          height: '2px',
+          bottom: -theme.spacing(2),
+          height: 3,
           backgroundColor: theme.palette.primary.main,
         },
       },

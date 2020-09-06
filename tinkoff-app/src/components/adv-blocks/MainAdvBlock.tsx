@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStyles, makeStyles, useMediaQuery } from '@material-ui/core';
+import { createStyles, makeStyles, useMediaQuery, useTheme } from '@material-ui/core';
 import { MobileContent } from './MobileContent';
 import { DesktopContent } from './DesktopContent';
 
@@ -201,10 +201,12 @@ const useStyles = makeStyles(theme =>
 );
 
 export const MainAdvBlock: React.FC = () => {
+  const theme = useTheme();
   const classes = useStyles();
-  const matches = useMediaQuery('(max-width: 768px)');
+  const matches = useMediaQuery(theme.breakpoints.down('md'));
+
   const item = Math.floor(Math.random() * firstAdvBlockData.length);
-  let data = firstAdvBlockData[item];
+  let data = firstAdvBlockData[item]; // Случайный баннер
 
   return <div className={classes.wrapper}>{matches ? <MobileContent {...data} /> : <DesktopContent {...data} />}</div>;
 };

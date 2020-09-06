@@ -6,8 +6,8 @@ export const AdvImage: React.FC<TImage> = props => {
 
   return (
     <picture>
-      <source srcSet={mobile.webp} type='image/webp' media='(max-width: 768px)' />
-      <source media='(max-width: 768px)' srcSet={mobile.img} />
+      <source srcSet={mobile.webp} type='image/webp' media='(max-width: 960px)' />
+      <source media='(max-width: 960px)' srcSet={mobile.img} />
 
       <source srcSet={tablet.webp} type='image/webp' media='(max-width: 1360px)' />
 
