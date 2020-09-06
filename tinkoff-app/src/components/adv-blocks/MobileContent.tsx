@@ -2,6 +2,7 @@ import React from 'react';
 import { Typography, Button, createStyles, makeStyles, Container } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { TComponentData } from './MainAdvBlock';
+import { AdvImage } from './AdvImage';
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -56,7 +57,7 @@ const useStyles = makeStyles(theme =>
 
 export const MobileContent: React.FC<TComponentData> = props => {
   const classes = useStyles();
-  const { title, subTitle, button } = props;
+  const { title, subTitle, button, image } = props;
 
   return (
     <Container>
@@ -70,19 +71,7 @@ export const MobileContent: React.FC<TComponentData> = props => {
 
       <div className={classes.imageWrapper}>
         <div className={classes.image}>
-          <picture>
-            <source
-              srcSet='https://acdn.tinkoff.ru/static/pages/files/dde9e3e2-be0a-4689-a332-37f5b75c4e2f.webp 1x, https://acdn.tinkoff.ru/static/pages/files/7f093359-43b4-4b02-a3b9-283ea151d5d7.webp 2x'
-              type='image/webp'
-              media='(max-width: 768px)'
-            />
-            <img
-              alt='Мужчина с котенком'
-              loading='lazy'
-              src='https://acdn.tinkoff.ru/static/pages/files/918e68e9-a79c-4313-a676-ef51ecf21e1c.png'
-              srcSet='https://acdn.tinkoff.ru/static/pages/files/9ac19c7b-69d8-489f-b19c-1d578b53f7ad.png 2x'
-            />
-          </picture>
+          <AdvImage {...image} />
         </div>
 
         <div className={classes.buttonWrapper}>
