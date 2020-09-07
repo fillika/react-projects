@@ -1,36 +1,9 @@
 import React from 'react';
-import logoRus from '../../images/logo_rus.svg';
-
-import { Button, Grid, IconButton, Container, makeStyles, createStyles } from '@material-ui/core';
+import logoRus from '../../../images/logo_rus.svg';
+import { Button, Grid, IconButton, Container } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
-
-const useStyle = makeStyles(theme =>
-  createStyles({
-    wrapper: {
-      backgroundColor: theme.palette.grey[500],
-      paddingTop: theme.spacing(1) - 6,
-      paddingBottom: theme.spacing(1) - 6,
-    },
-    logo: {
-      width: 150,
-    },
-    icon: {
-      padding: theme.spacing(1) - 4,
-    },
-    headerButton: {
-      boxShadow: theme.shadows[24],
-      backgroundColor: '#fff',
-      fontSize: '0.55em',
-      letterSpacing: 1,
-      paddingTop: theme.spacing(1) - 5,
-      paddingLeft: theme.spacing(1),
-      paddingRight: theme.spacing(1),
-      paddingBottom: theme.spacing(1) - 5,
-      height: theme.spacing(3),
-    },
-  })
-);
+import { useStyle } from './style';
 
 export const FirstLevelHeader: React.FC = () => {
   const classes = useStyle();

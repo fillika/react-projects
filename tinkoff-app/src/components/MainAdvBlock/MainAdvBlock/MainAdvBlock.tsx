@@ -1,35 +1,9 @@
 import React from 'react';
-import { createStyles, makeStyles, useMediaQuery, useTheme } from '@material-ui/core';
-import { MobileContent } from './MobileContent';
-import { DesktopContent } from './DesktopContent';
-
-export type TImage = {
-  src: string;
-  srcSet: string;
-  mobile: {
-    img: string;
-    webp: string;
-  };
-  tablet: {
-    webp: string;
-  };
-  desktop: {
-    img: string;
-    webp: string;
-  };
-  alt: string;
-};
-
-export type TComponentData = {
-  id: number;
-  title: string;
-  subTitle: string;
-  button: {
-    text: string;
-    link: string;
-  };
-  image: TImage;
-};
+import { useMediaQuery, useTheme } from '@material-ui/core';
+import { MobileContent } from '../MobileContent';
+import { DesktopContent } from '../DesktopContent';
+import { useStyles } from './style';
+import {TComponentData} from '../types';
 
 const firstAdvBlockData: TComponentData[] = [
   {
@@ -183,25 +157,6 @@ const firstAdvBlockData: TComponentData[] = [
     },
   },
 ];
-
-const useStyles = makeStyles(theme =>
-  createStyles({
-    wrapper: {
-      backgroundColor: theme.palette.grey[500],
-      paddingTop: theme.spacing(2),
-      [theme.breakpoints.up('md')]: {
-        height: 434,
-        paddingTop: 0,
-      },
-      [theme.breakpoints.up('lg')]: {
-        height: 448,
-      },
-      '@media (min-width: 1360px)': {
-        height: 480,
-      },
-    },
-  })
-);
 
 export const MainAdvBlock: React.FC = () => {
   const theme = useTheme();

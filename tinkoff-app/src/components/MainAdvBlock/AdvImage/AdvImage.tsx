@@ -1,5 +1,5 @@
 import React from 'react';
-import { TImage } from './MainAdvBlock';
+import { TImage } from '../types';
 
 export const AdvImage: React.FC<TImage> = props => {
   const { alt, mobile, tablet, desktop, src, srcSet } = props;

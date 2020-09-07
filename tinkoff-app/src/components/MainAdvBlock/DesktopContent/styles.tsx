@@ -1,10 +1,6 @@
-import React from 'react';
-import { Typography, Button, createStyles, makeStyles, Container } from '@material-ui/core';
-import { Link } from 'react-router-dom';
-import { TComponentData } from './MainAdvBlock';
-import { AdvImage } from './AdvImage';
+import { createStyles, makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles(theme =>
+export const useStyles = makeStyles(theme =>
   createStyles({
     wrapper: {
       position: 'relative',
@@ -68,38 +64,3 @@ const useStyles = makeStyles(theme =>
     },
   })
 );
-
-export const DesktopContent: React.FC<TComponentData> = props => {
-  const classes = useStyles();
-  const { title, subTitle, button, image } = props;
-
-  return (
-    <Container>
-      <div className={classes.wrapper}>
-        <div className={classes.imageWrapper}>
-          <div>
-            <AdvImage {...image} />
-          </div>
-        </div>
-
-        <div className={classes.textWrapper}>
-          <div style={{ flexGrow: 1 }}>
-            <Typography className={classes.h1} variant='h1'>
-              <Typography className={classes.title}>{title}</Typography>
-            </Typography>
-
-            <Typography className={classes.subTitle}>{subTitle}</Typography>
-          </div>
-
-          <div>
-            <Link to={button.link}>
-              <Button className={classes.button} variant='contained' color='primary'>
-                {button.text}
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </Container>
-  );
-};

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header } from './Header';
-import { MainAdvBlock } from './adv-blocks/MainAdvBlock';
+import { MainAdvBlock } from './MainAdvBlock';
 
 export const App: React.FC = () => {
   return (
