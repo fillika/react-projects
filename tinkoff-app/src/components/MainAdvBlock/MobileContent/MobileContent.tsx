@@ -1,8 +1,11 @@
 import React from 'react';
-import { Typography, Button, Container } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+
 import { TComponentData } from '../types';
-import { AdvImage } from '../AdvImage/AdvImage';
+
+import { AdvImage } from '../AdvImage';
+
+import { Typography, Button, Container } from '@material-ui/core';
 import { useStyles } from './styles';
 
 export const MobileContent: React.FC<TComponentData> = props => {

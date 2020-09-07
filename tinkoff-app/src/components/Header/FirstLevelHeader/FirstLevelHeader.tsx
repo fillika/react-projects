@@ -1,9 +1,11 @@
 import React from 'react';
-import logoRus from '../../../images/logo_rus.svg';
+import { Link } from 'react-router-dom';
+
 import { Button, Grid, IconButton, Container } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import { Link } from 'react-router-dom';
 import { useStyle } from './style';
+
+import logoRus from '../../../images/logo_rus.svg';
 
 export const FirstLevelHeader: React.FC = () => {
   const classes = useStyle();

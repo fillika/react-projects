@@ -1,10 +1,16 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
+import { TLevelLinks } from '../types';
 
 import { Grid, ListItem, List, Container } from '@material-ui/core';
-import { NavLink } from 'react-router-dom';
-import { TLevelLinks } from '../types';
 import { useStyles } from './style';
 
+/**
+ * NOTE: Если меню будет дублироваться (например header, footer),
+ * то разные модули будут связаны общим меню. Надо придумать, как избежать этого
+ * или куда можно вынести общие данные, чтобы каждый модуль мог переиспользовать их
+ */
 const thirdLevelLinks: TLevelLinks = [
   {
     id: 1,

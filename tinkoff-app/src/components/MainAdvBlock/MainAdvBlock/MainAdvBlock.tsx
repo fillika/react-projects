@@ -1,10 +1,16 @@
 import React from 'react';
-import { useMediaQuery, useTheme } from '@material-ui/core';
+
+import { TComponentData } from '../types';
+
 import { MobileContent } from '../MobileContent';
 import { DesktopContent } from '../DesktopContent';
-import { useStyles } from './style';
-import {TComponentData} from '../types';
 
+import { useMediaQuery, useTheme } from '@material-ui/core';
+import { useStyles } from './style';
+
+/**
+ * NOTE: Понять, куда определять данные для рендера
+ */
 const firstAdvBlockData: TComponentData[] = [
   {
     id: 1,
