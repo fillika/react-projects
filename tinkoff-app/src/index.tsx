@@ -1,51 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
-import { App } from './components/App';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+import { App } from './components/App';
+
+import { ThemeProvider } from '@material-ui/core';
+import { theme } from './theme';
 import './index.scss';
-
-/**
- * Тут Я создаю тему и передаю в настройки объект
- */
-const theme = createMuiTheme({
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 600,
-      md: 960,
-      lg: 1104,
-      xl: 1920,
-    },
-  },
-  palette: {
-    primary: {
-      main: '#ffdd2d',
-    },
-    secondary: {
-      main: '#f5f5f6',
-    },
-    grey: {
-      500: '#f5f5f6',
-    },
-    text: {
-      primary: '#333',
-      secondary: 'rgba(0,0,0,.8)',
-    },
-  },
-  typography: {
-    fontFamily:
-      '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol',
-  },
-});
-
-/**
- * Переопределил посленим элементом массива свою тень
- */
-theme.shadows[23] = '0 10px 16px -6px rgba(0,0,0,.08)'; // Тень под меню 3 уровня
-theme.shadows[24] = '0 2px 16px rgba(0,0,0,.08)'; // Тень у кнопки
 
 ReactDOM.render(
   <React.StrictMode>
