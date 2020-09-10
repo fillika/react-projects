@@ -26,7 +26,7 @@ export const useStyles = makeStyles(theme =>
       transitionDuration: '220ms',
       letterSpacing: 0,
       fontWeight: 500,
-      fontSize: '0.65em',
+      fontSize: '0.8em',
       position: 'relative',
       fontFamily: 'Segoe UI',
 

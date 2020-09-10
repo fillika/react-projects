@@ -19,22 +19,22 @@ export const useStyles = makeStyles(theme =>
       height: '100%',
     },
     h1: {
-      fontSize: '1.8rem',
       width: theme.spacing(49),
       '@media (min-width: 1360px)': {
         width: theme.spacing(55),
-        fontSize: '2.05em',
       },
     },
     title: {
       fontFamily: '"Fira Sans", sans-serif',
-      color: 'rgba(0,0,0,.8)',
-      fontSize: '1em',
+      fontSize: '0.75em',
       fontWeight: 400,
       lineHeight: 1.0909,
+      '@media (min-width: 1360px)': {
+        fontSize: '0.915em',
+      },
     },
     subTitle: {
-      fontSize: '0.75em',
+      fontSize: 15,
       marginTop: theme.spacing(3),
       width: 336,
     },
@@ -53,7 +53,7 @@ export const useStyles = makeStyles(theme =>
       },
     },
     button: {
-      fontSize: '0.75em',
+      fontSize: 15,
       textTransform: 'initial',
       paddingTop: theme.spacing(2) + 1,
       paddingLeft: theme.spacing(3) + 3,

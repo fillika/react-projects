@@ -41,12 +41,12 @@ export const Card: React.FC = () => {
           </picture>
         </Grid>
 
-        <Grid item>
-          <Typography variant='h4'>Дебетовая карта Tinkoff Black</Typography>
-        </Grid>
+        <Grid item className={classes.textWrapper}>
+          <Typography variant='h4'>
+            <p className={classes.title}>Дебетовая карта Tinkoff Black</p>
+          </Typography>
 
-        <Grid item>
-          <Typography>Кэшбэк до 30% и ежемесячный процент на остаток</Typography>
+          <Typography className={classes.subtitle}>Кэшбэк до 30% и ежемесячный процент на остаток</Typography>
         </Grid>
 
         <Grid item>

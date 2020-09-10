@@ -1,12 +1,17 @@
 import React from 'react';
-import { Container, Grid } from '@material-ui/core';
+import { Container, Grid, Typography } from '@material-ui/core';
 import { Card } from './Card';
+import { useStyles } from './style';
 
 export const RecommendedProduct = () => {
+  const classes = useStyles();
+
   return (
     <div>
       <Container>
-        <h2>Рекомендуемые продукты</h2>
+        <Typography variant='h2'>
+          <p className={classes.subtitle}>Рекомендуемые продукты</p>
+        </Typography>
 
         <Grid spacing={6} container>
           <Card />

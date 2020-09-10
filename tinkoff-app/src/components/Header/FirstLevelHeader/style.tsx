@@ -17,7 +17,7 @@ export const useStyle = makeStyles(theme =>
     headerButton: {
       boxShadow: theme.shadows[24],
       backgroundColor: '#fff',
-      fontSize: '0.55em',
+      fontSize: '0.7em',
       letterSpacing: 1,
       paddingTop: theme.spacing(1) - 5,
       paddingLeft: theme.spacing(1),

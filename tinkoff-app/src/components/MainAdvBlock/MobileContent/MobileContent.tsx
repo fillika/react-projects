@@ -15,7 +15,7 @@ export const MobileContent: React.FC<TComponentData> = props => {
   return (
     <Container>
       <div className={classes.textWrapper}>
-        <Typography className={classes.h1} variant='h1'>
+        <Typography variant='h1'>
           <Typography className={classes.title}>{title}</Typography>
         </Typography>
 

@@ -5,12 +5,13 @@
 html,
 body {
   overflow-x: hidden;
-  font-size: 20px;
+  font-size: 16px;
 
   @media screen and (min-width: 600px) {
   }
 
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 1104) {
+    font-size: 20px;
   }
 
   @media screen and (min-width: 1280px) {

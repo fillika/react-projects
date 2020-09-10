@@ -14,6 +14,7 @@ export const useStyles = makeStyles(theme =>
       minHeight: 312,
       [theme.breakpoints.up('lg')]: {
         minHeight: 0,
+        marginBottom: theme.spacing(3),
       },
     },
     image: {
@@ -27,6 +28,23 @@ export const useStyles = makeStyles(theme =>
         position: 'initial',
         transform: 'translate(0,0)',
       },
+    },
+    textWrapper: {
+      padding: theme.spacing(3),
+      [theme.breakpoints.up('lg')]: {
+        padding: 0,
+      },
+    },
+    title: {
+      fontWeight: 700,
+      [theme.breakpoints.up('lg')]: {
+        fontWeight: 400,
+        fontSize: '1.4em',
+      },
+    },
+    subtitle: {
+      paddingTop: theme.spacing(2),
+      fontSize: 15,
     },
   })
 );

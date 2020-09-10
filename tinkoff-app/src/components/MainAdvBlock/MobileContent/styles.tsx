@@ -10,16 +10,12 @@ export const useStyles = makeStyles(theme =>
       padding: `${theme.spacing(2)}px ${theme.spacing(3)}px`,
       textAlign: 'center',
     },
-    h1: {
-      fontSize: '1rem',
-    },
     title: {
-      color: 'rgba(0,0,0,.8)',
-      fontSize: '1.2em',
+      fontSize: '0.5em',
       fontWeight: 700,
     },
     subTitle: {
-      fontSize: '0.75em',
+      fontSize: 15,
       marginTop: theme.spacing(2),
     },
     imageWrapper: {
@@ -40,7 +36,7 @@ export const useStyles = makeStyles(theme =>
       width: '100%',
     },
     button: {
-      fontSize: '0.75em',
+      fontSize: 15,
       textTransform: 'initial',
       paddingTop: theme.spacing(1) + 1,
       paddingLeft: theme.spacing(3) - 1,
