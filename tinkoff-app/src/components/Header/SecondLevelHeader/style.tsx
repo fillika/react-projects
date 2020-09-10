@@ -2,6 +2,17 @@ import { makeStyles, createStyles } from '@material-ui/core';
 
 export const useStyles = makeStyles(theme =>
   createStyles({
+    wrapper: {
+      boxShadow: 'inset 0 -1px 0 0 #e7e8ea',
+      [theme.breakpoints.up('lg')]: {
+        boxShadow: 'none',
+      },
+    },
+    container: {
+      [theme.breakpoints.up('lg')]: {
+        paddingLeft: 0,
+      },
+    },
     list: {
       display: 'flex',
       padding: 0,
@@ -9,6 +20,9 @@ export const useStyles = makeStyles(theme =>
     },
     listItem: {
       paddingLeft: '0',
+      [theme.breakpoints.up('lg')]: {
+        paddingRight: theme.spacing(3),
+      },
     },
     navLink: {
       color: '#959ba4',

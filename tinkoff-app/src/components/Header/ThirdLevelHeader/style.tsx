@@ -6,14 +6,19 @@ export const useStyles = makeStyles(theme =>
       padding: 0,
       whiteSpace: 'nowrap',
       height: 44,
+      display: 'flex',
+      [theme.breakpoints.up('lg')]: {
+        height: 56,
+      },
     },
     listItem: {
       paddingLeft: 0,
       paddingBottom: 0,
       paddingTop: 0,
-      display: 'inline-block',
+      display: 'flex',
       lineHeight: 1.8,
       width: 'auto',
+      height: '100%',
     },
     navLink: {
       color: '#79818c',
@@ -37,9 +42,12 @@ export const useStyles = makeStyles(theme =>
           display: 'inline-block',
           position: 'absolute',
           width: '100%',
-          bottom: -theme.spacing(2),
+          bottom: -theme.spacing(1) - 3,
           height: 3,
           backgroundColor: theme.palette.primary.main,
+          [theme.breakpoints.up('lg')]: {
+            bottom: -theme.spacing(2) - 1,
+          },
         },
       },
 
@@ -51,9 +59,12 @@ export const useStyles = makeStyles(theme =>
           display: 'inline-block',
           position: 'absolute',
           width: '100%',
-          bottom: -theme.spacing(2),
+          bottom: -theme.spacing(1) - 3,
           height: 3,
           backgroundColor: '#79818c',
+          [theme.breakpoints.up('lg')]: {
+            bottom: -theme.spacing(2) - 1,
+          },
         },
       },
     },

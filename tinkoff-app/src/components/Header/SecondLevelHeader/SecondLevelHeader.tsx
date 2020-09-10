@@ -64,8 +64,8 @@ export const SecondLevelHeader: React.FC = () => {
   ));
 
   return (
-    <div style={{ boxShadow: 'inset 0 -1px 0 0 #e7e8ea' }}>
-      <Container>
+    <div className={classes.wrapper}>
+      <Container className={classes.container}>
         <Grid container>
           <Grid style={{ overflowX: 'scroll' }} item>
             <List className={classes.list}>{createListItem}</List>
