@@ -31,6 +31,12 @@ export const theme = createMuiTheme({
   typography: {
     fontFamily:
       '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol',
+    body1: {
+      fontSize: '0.75rem',
+    },
+    h4: {
+      fontSize: '1.0625rem',
+    },
     button: {
       fontSize: '0.65rem',
       minHeight: 42,

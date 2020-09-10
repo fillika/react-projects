@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Header } from './Header';
 import { MainAdvBlock } from './MainAdvBlock';
+import { RecommendedProduct } from './RecommendedProduct';
 
 export const App: React.FC = () => {
   return (
@@ -10,10 +11,8 @@ export const App: React.FC = () => {
 
       <main>
         <MainAdvBlock />
-        <div>
-          <h2>Рекламный блок 2</h2>
-          <p>Тут текст и картинка</p>
-        </div>
+
+        <RecommendedProduct />
 
         <div>
           <h2>Рекламный блок 3</h2>
