@@ -1,4 +1,4 @@
-import { createMuiTheme } from "@material-ui/core";
+import { createMuiTheme } from '@material-ui/core';
 
 /**
  * Тут Я создаю тему и передаю в настройки объект
@@ -31,6 +31,13 @@ export const theme = createMuiTheme({
   typography: {
     fontFamily:
       '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol',
+    button: {
+      fontSize: '0.65rem',
+      minHeight: 42,
+      minWidth: 32,
+      padding: '9px 23px 7px',
+      textTransform: 'initial',
+    },
   },
 });
 

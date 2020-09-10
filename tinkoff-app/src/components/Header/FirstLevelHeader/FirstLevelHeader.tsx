@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Button, Grid, IconButton, Container } from '@material-ui/core';
+import { Button, Grid, IconButton, Container, useMediaQuery, useTheme } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { useStyle } from './style';
 
@@ -9,16 +9,21 @@ import logoRus from '../../../images/logo_rus.svg';
 
 export const FirstLevelHeader: React.FC = () => {
   const classes = useStyle();
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('md'));
+  const burger = matches && (
+    <Grid style={{ marginRight: '8px' }} item>
+      <IconButton className={classes.icon} edge='start' color='inherit' aria-label='menu'>
+        <MenuIcon />
+      </IconButton>
+    </Grid>
+  );
 
   return (
     <div className={classes.wrapper}>
       <Container>
         <Grid justify='space-between' alignItems='center' container>
-          <Grid style={{ marginRight: '8px' }} item>
-            <IconButton className={classes.icon} edge='start' color='inherit' aria-label='menu'>
-              <MenuIcon />
-            </IconButton>
-          </Grid>
+          {burger}
 
           <Grid item xs>
             <Link to='/'>

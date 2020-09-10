@@ -12,6 +12,7 @@ export const useStyle = makeStyles(theme =>
     },
     icon: {
       padding: theme.spacing(1) - 4,
+      marginLeft: -theme.spacing(1),
     },
     headerButton: {
       boxShadow: theme.shadows[24],
@@ -22,7 +23,19 @@ export const useStyle = makeStyles(theme =>
       paddingLeft: theme.spacing(1),
       paddingRight: theme.spacing(1),
       paddingBottom: theme.spacing(1) - 5,
-      height: theme.spacing(3),
+      minHeight: 0,
+      textTransform: 'uppercase',
+      color: 'rgba(0, 0, 0, 0.87)',
+      '&:hover': {
+        boxShadow: '0 8px 16px rgba(0,0,0,.16)',
+        color: '#0000EE',
+      },
+      [theme.breakpoints.up('lg')]: {
+        paddingTop: theme.spacing(1) + 1,
+        paddingBottom: theme.spacing(1) - 1,
+        paddingLeft: theme.spacing(1) + 4,
+        paddingRight: theme.spacing(1) + 4,
+      },
     },
   })
 );
