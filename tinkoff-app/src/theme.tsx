@@ -47,7 +47,7 @@ export const theme = createMuiTheme({
       fontSize: '1.0625rem',
     },
     button: {
-      fontSize: '0.65rem',
+      fontSize: 15,
       minHeight: 42,
       minWidth: 32,
       padding: '9px 23px 7px',

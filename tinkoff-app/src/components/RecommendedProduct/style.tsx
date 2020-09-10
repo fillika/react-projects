@@ -5,10 +5,13 @@ export const useStyles = makeStyles(theme =>
     subtitle: {
       fontSize: '0.67em',
       fontWeight: 700,
-      textAlign: 'center',
       paddingTop: theme.spacing(6),
       marginBottom: theme.spacing(3),
-      [theme.breakpoints.up('lg')]: {},
+      [theme.breakpoints.up('lg')]: {
+        fontWeight: 400,
+        fontSize: '1.2em',
+        marginBottom: theme.spacing(5) + 4,
+      },
     },
   })
 );

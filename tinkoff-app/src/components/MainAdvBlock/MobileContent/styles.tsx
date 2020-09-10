@@ -36,7 +36,6 @@ export const useStyles = makeStyles(theme =>
       width: '100%',
     },
     button: {
-      fontSize: 15,
       textTransform: 'initial',
       paddingTop: theme.spacing(1) + 1,
       paddingLeft: theme.spacing(3) - 1,

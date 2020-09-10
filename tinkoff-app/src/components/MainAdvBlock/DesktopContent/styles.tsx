@@ -53,7 +53,6 @@ export const useStyles = makeStyles(theme =>
       },
     },
     button: {
-      fontSize: 15,
       textTransform: 'initial',
       paddingTop: theme.spacing(2) + 1,
       paddingLeft: theme.spacing(3) + 3,

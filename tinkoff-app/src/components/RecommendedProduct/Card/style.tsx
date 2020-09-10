@@ -5,6 +5,7 @@ export const useStyles = makeStyles(theme =>
     wrapper: {
       textAlign: 'center',
       overflowX: 'hidden',
+      position: 'relative',
       [theme.breakpoints.up('lg')]: {
         textAlign: 'left',
       },
@@ -17,34 +18,39 @@ export const useStyles = makeStyles(theme =>
         marginBottom: theme.spacing(3),
       },
     },
-    image: {
-      position: 'absolute',
-      left: '50%',
-      top: '50%',
-      transform: 'translate(-50%, -50%)',
-      minHeight: 312,
-      [theme.breakpoints.up('lg')]: {
-        minHeight: 0,
-        position: 'initial',
-        transform: 'translate(0,0)',
-      },
-    },
     textWrapper: {
       padding: theme.spacing(3),
       [theme.breakpoints.up('lg')]: {
         padding: 0,
+        paddingBottom: theme.spacing(3),
       },
+    },
+    wrapperLink: {
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      bottom: 0,
+      top: 0,
+      zIndex: 10000,
     },
     title: {
       fontWeight: 700,
       [theme.breakpoints.up('lg')]: {
-        fontWeight: 400,
-        fontSize: '1.4em',
+        fontWeight: 500,
+        fontSize: '1.3em',
       },
     },
     subtitle: {
       paddingTop: theme.spacing(2),
       fontSize: 15,
+    },
+    button: {
+      color: '#1771e6',
+      padding: '9px 23px 7px',
+      zIndex: 10100,
+      [theme.breakpoints.up('lg')]: {
+        backgroundColor: '#ecf1f7',
+      },
     },
   })
 );
