@@ -37,14 +37,17 @@ export const theme = createMuiTheme({
     h1: {
       color: 'rgba(0,0,0,0.8)',
       fontSize: '3rem',
+      letterSpacing: -1,
     },
     h2: {
       color: 'rgba(0,0,0,0.8)',
       fontSize: '1.875rem',
+      letterSpacing: -1,
     },
     h4: {
       color: 'rgba(0,0,0,0.8)',
       fontSize: '1.0625rem',
+      letterSpacing: -1,
     },
     button: {
       fontSize: 15,

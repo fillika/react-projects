@@ -6,15 +6,15 @@ export const useStyles = makeStyles(theme =>
       backgroundColor: theme.palette.grey[500],
       marginTop: theme.spacing(11),
       marginBottom: theme.spacing(11),
-      paddingTop: theme.spacing(2),
-      paddingBottom: theme.spacing(2),
+      paddingTop: theme.spacing(4),
+      paddingBottom: theme.spacing(4),
     },
     container: {
       position: 'relative',
     },
     imageWrapper: {
       position: 'absolute',
-      top: -theme.spacing(11),
+      top: -theme.spacing(13),
       right: 0,
     },
   })

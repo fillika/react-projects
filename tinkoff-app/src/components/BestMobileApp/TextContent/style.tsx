@@ -3,8 +3,8 @@ import { makeStyles, createStyles } from '@material-ui/core';
 export const useStyles = makeStyles(theme =>
   createStyles({
     wrapper: {
-      paddingTop: theme.spacing(7),
-      paddingBottom: theme.spacing(7),
+      paddingTop: theme.spacing(3),
+      paddingBottom: theme.spacing(3),
     },
     textWrapper: {
       maxWidth: 346,

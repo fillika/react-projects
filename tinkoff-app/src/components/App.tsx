@@ -4,6 +4,7 @@ import { Header } from './Header';
 import { MainAdvBlock } from './MainAdvBlock';
 import { RecommendedProduct } from './RecommendedProduct';
 import { BestMobileApp } from './BestMobileApp';
+import { Services } from './Services';
 
 export const App: React.FC = () => {
   return (
@@ -14,7 +15,7 @@ export const App: React.FC = () => {
         <MainAdvBlock />
         <RecommendedProduct />
         <BestMobileApp />
-
+        <Services />
         {/* Тут будет еще несколько блоков */}
       </main>
 
