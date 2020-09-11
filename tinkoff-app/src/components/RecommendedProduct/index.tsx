@@ -103,7 +103,7 @@ const cardsData: TCard[] = [
   },
   {
     id: 4,
-    link: '/mobile-operator/?utm_source=tinkofftop',
+    link: '/mobile-operator/',
     title: 'Тинькофф Мобайл',
     subTitle: 'Попробуйте бесплатно: голосовой помощник, 600 минут, 20 ГБ',
     buttonText: 'Заказать сим-карту',
@@ -143,18 +143,21 @@ const cardsData: TCard[] = [
   },
   {
     id: 6,
-    link: '',
-    title: '',
-    subTitle: '',
-    buttonText: '',
+    link: '/cards/debit-cards/tinkoff-black/junior/',
+    title: 'Бесплатная детская карта',
+    subTitle: 'Бонусы за покупки. Возврат денег за оплату в кафе и интернете',
+    buttonText: 'Оформить карту',
     image: {
-      alt: '',
-      src: '',
-      srcSet: '',
-      webp: '',
+      alt: 'Тинькофф Джуниор',
+      src: 'https://acdn.tinkoff.ru/static/pages/files/b0613bf2-a946-46a1-89fa-755e64626109.png',
+      srcSet: 'https://acdn.tinkoff.ru/static/pages/files/e4ed5849-ae7c-4530-a48c-de82a9ee8998.png 2x',
+      webp:
+        'https://acdn.tinkoff.ru/static/pages/files/43920e66-a057-479d-bbd1-500dcd644614.webp 1x, https://acdn.tinkoff.ru/static/pages/files/035a0300-7c57-44a4-bb73-159d51df8581.webp 2x',
       mobile: {
-        img: '',
-        webp: '',
+        img:
+          'https://acdn.tinkoff.ru/static/pages/files/74954be6-3fc4-440c-8779-fb13c3a1975a.png 1x, https://acdn.tinkoff.ru/static/pages/files/ac2db0e6-1b20-4cd2-99fb-2585eca47a25.png 2x',
+        webp:
+          'https://acdn.tinkoff.ru/static/pages/files/160cca85-77db-4f61-b2b1-d3585ba53954.webp 1x, https://acdn.tinkoff.ru/static/pages/files/69ed1f9b-99f7-4acd-b39b-5f069fe4fbfc.webp 2x',
       },
     },
   },

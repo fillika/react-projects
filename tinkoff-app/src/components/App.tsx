@@ -13,6 +13,7 @@ export const App: React.FC = () => {
         <MainAdvBlock />
         <RecommendedProduct />
 
+
         <div>
           <h2>Рекламный блок 3</h2>
           <p>Тут текст и картинка</p>
