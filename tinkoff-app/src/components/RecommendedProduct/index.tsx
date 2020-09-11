@@ -26,7 +26,7 @@ export const RecommendedProduct = () => {
   });
 
   return (
-    <div>
+    <div className={classes.wrapper}>
       <Container>
         <Typography variant='h2'>
           <p className={classes.subtitle}>Рекомендуемые продукты</p>

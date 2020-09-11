@@ -3,6 +3,7 @@ import React from 'react';
 import { Header } from './Header';
 import { MainAdvBlock } from './MainAdvBlock';
 import { RecommendedProduct } from './RecommendedProduct';
+import { BestMobileApp } from './BestMobileApp';
 
 export const App: React.FC = () => {
   return (
@@ -12,22 +13,7 @@ export const App: React.FC = () => {
       <main>
         <MainAdvBlock />
         <RecommendedProduct />
-
-
-        <div>
-          <h2>Рекламный блок 3</h2>
-          <p>Тут текст и картинка</p>
-        </div>
-
-        <div>
-          <h2>Рекламный блок 4</h2>
-          <p>Тут текст и картинка</p>
-        </div>
-
-        <div>
-          <h2>Рекламный блок 5</h2>
-          <p>Тут текст и картинка</p>
-        </div>
+        <BestMobileApp />
 
         {/* Тут будет еще несколько блоков */}
       </main>
