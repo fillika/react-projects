@@ -23,16 +23,5 @@ export const useStyles = makeStyles(theme =>
     buttonWrapper: {
       marginTop: theme.spacing(3),
     },
-    button: {
-      color: '#1771e6',
-      paddingLeft: 0,
-      '&:visited': {
-        color: '#1771e6',
-      },
-      '&:hover': {
-        backgroundColor: 'transparent',
-        opacity: 0.95,
-      },
-    },
   })
 );

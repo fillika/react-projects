@@ -21,12 +21,6 @@ export const useStyles = makeStyles(theme =>
     subtitle: {
       marginBottom: theme.spacing(2),
     },
-    button: {
-      paddingLeft: 0,
-      '&:hover': {
-        backgroundColor: 'transparent',
-      },
-    },
     link: {
       '&:visited': {
         color: '#1771E6',

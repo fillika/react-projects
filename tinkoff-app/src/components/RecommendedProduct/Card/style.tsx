@@ -44,13 +44,5 @@ export const useStyles = makeStyles(theme =>
       paddingTop: theme.spacing(2),
       fontSize: 15,
     },
-    button: {
-      color: '#1771e6',
-      padding: '9px 23px 7px',
-      zIndex: 10100,
-      [theme.breakpoints.up('lg')]: {
-        backgroundColor: '#ecf1f7',
-      },
-    },
   })
 );
