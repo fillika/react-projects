@@ -10,21 +10,30 @@ import { TServiceCardProps } from '../Common/ServiceCard/types';
 export const Services: React.FC = () => {
   const classes = useStyles();
   const renderCards = serviceCardsData.map(data => (
-    <Grid key={data.id} xs={12} md={6} item>
-      <ServiceCard {...data} />
+    <Grid
+      key={ data.id }
+      xs={ 12 }
+      md={ 6 }
+      item>
+      <ServiceCard { ...data } />
     </Grid>
   ));
 
   return (
-    <Container className={classes.container}>
-      <Typography variant='h2'>
-        <p className={classes.title}>Сервисы и услуги</p>
-      </Typography>
+    <div className={classes.wrapper}>
+      <Container className={ classes.container }>
+        <Typography variant='h2'>
+          <p className={ classes.title }>Сервисы и услуги</p>
+        </Typography>
 
-      <Grid className={classes.gridContainer} container spacing={6}>
-        {renderCards}
-      </Grid>
-    </Container>
+        <Grid
+          className={ classes.gridContainer }
+          container
+          spacing={ 6 }>
+          { renderCards }
+        </Grid>
+      </Container>
+    </div>
   );
 };
 

@@ -2,8 +2,11 @@ import { makeStyles, createStyles } from '@material-ui/core';
 
 export const useStyles = makeStyles(theme =>
   createStyles({
-    container: {
+    wrapper: {
       backgroundColor: theme.palette.grey[500],
+      paddingBottom: theme.spacing(7),
+    },
+    container: {
       marginTop: theme.spacing(8),
     },
     gridContainer: {
@@ -12,7 +15,7 @@ export const useStyles = makeStyles(theme =>
     },
     title: {
       paddingTop: theme.spacing(6),
-      paddingBottom: theme.spacing(1),
+      paddingBottom: theme.spacing(4),
       textAlign: 'center',
       fontWeight: 700,
       fontSize: 20,
@@ -23,5 +26,5 @@ export const useStyles = makeStyles(theme =>
         textAlign: 'left',
       },
     },
-  })
+  }),
 );

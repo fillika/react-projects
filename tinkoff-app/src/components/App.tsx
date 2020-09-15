@@ -16,7 +16,7 @@ export const App: React.FC = () => {
         <RecommendedProduct />
         <BestMobileApp />
         <Services />
-        {/* Тут будет еще несколько блоков */}
+
       </main>
 
       <footer>
