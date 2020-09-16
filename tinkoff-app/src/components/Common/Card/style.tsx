@@ -6,6 +6,7 @@ export const useStyles = makeStyles(theme =>
       textAlign: 'center',
       overflowX: 'hidden',
       position: 'relative',
+      height: '100%',
       [theme.breakpoints.up('lg')]: {
         textAlign: 'left',
       },

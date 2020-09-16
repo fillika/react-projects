@@ -2,9 +2,9 @@ import React from 'react';
 
 import { useTheme } from '@material-ui/core';
 import { useStyles } from './style';
-import { TImage } from '../types';
+import { TImage } from './types';
 
-export const Image: React.FC<TImage> = props => {
+export const CardImage: React.FC<TImage> = props => {
   const { alt, src, srcSet, webp, mobile } = props;
   const theme = useTheme();
   const useMedia = `(max-width: ${theme.breakpoints.values.lg - 1}px)`;

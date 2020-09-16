@@ -2,9 +2,9 @@ import { createStyles, makeStyles } from '@material-ui/core';
 
 export const useCommonStyles = makeStyles(theme => createStyles({
   blueButton: {
-    color: '#1771e6',
     padding: '9px 23px 7px',
     zIndex: 10100,
+    fontWeight: 400,
     [theme.breakpoints.up('lg')]: {
       border: '1px solid #ecf1f7',
       backgroundColor: '#ecf1f7',

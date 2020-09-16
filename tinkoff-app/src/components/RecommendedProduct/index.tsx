@@ -2,16 +2,16 @@ import React from 'react';
 
 import { Container, Grid, Typography, useMediaQuery, useTheme } from '@material-ui/core';
 
-import { Card } from './Card';
+import { Card } from '../Common/Card';
 
-import { TCard } from './types';
+import { TCard } from '../Common/Card/types';
 
 import { useStyles } from './style';
 
 export const RecommendedProduct = () => {
   const classes = useStyles();
   const theme = useTheme();
-  const matches = useMediaQuery(`(max-width: ${theme.breakpoints.values.lg - 1}px)`);
+  const matches = useMediaQuery(`(max-width: ${ theme.breakpoints.values.lg - 1 }px)`);
   const createCards = cardsData.map((card, index) => {
     const { id } = card;
 
@@ -22,18 +22,18 @@ export const RecommendedProduct = () => {
       return null;
     }
 
-    return <Card {...card} key={id} />;
+    return <Card { ...card } key={ id }/>;
   });
 
   return (
-    <div className={classes.wrapper}>
+    <div className={ classes.wrapper }>
       <Container>
         <Typography variant='h2'>
-          <p className={classes.subtitle}>Рекомендуемые продукты</p>
+          <p className={ classes.subtitle }>Рекомендуемые продукты</p>
         </Typography>
 
-        <Grid spacing={6} container>
-          {createCards}
+        <Grid spacing={ 6 } container>
+          { createCards }
         </Grid>
       </Container>
     </div>
