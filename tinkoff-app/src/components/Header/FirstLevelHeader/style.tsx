@@ -28,14 +28,14 @@ export const useStyle = makeStyles(theme =>
       color: 'rgba(0, 0, 0, 0.87)',
       '&:hover': {
         boxShadow: '0 8px 16px rgba(0,0,0,.16)',
-        color: '#0000EE',
+        color: '#0000ee',
       },
       [theme.breakpoints.up('lg')]: {
-        paddingTop: theme.spacing(1) + 1,
+        paddingTop: theme.spacing(1) - 2,
         paddingBottom: theme.spacing(1) - 1,
         paddingLeft: theme.spacing(1) + 4,
         paddingRight: theme.spacing(1) + 4,
       },
     },
-  })
+  }),
 );

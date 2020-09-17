@@ -4,7 +4,6 @@ export const useStyles = makeStyles(theme =>
   createStyles({
     wrapper: {
       textAlign: 'center',
-      overflowX: 'hidden',
       position: 'relative',
       height: '100%',
       [theme.breakpoints.up('lg')]: {

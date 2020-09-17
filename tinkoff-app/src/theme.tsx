@@ -1,5 +1,10 @@
-import { createMuiTheme, useTheme } from '@material-ui/core';
+import { createMuiTheme } from '@material-ui/core';
 
+const variables = {
+  color: {
+    gray: '#333',
+  },
+};
 /**
  * Тут Я создаю тему и передаю в настройки объект
  */
@@ -9,7 +14,7 @@ export const theme = createMuiTheme({
       xs: 0,
       sm: 600,
       md: 960,
-      lg: 1104,
+      lg: 1154,
       xl: 1920,
     },
   },
@@ -24,7 +29,7 @@ export const theme = createMuiTheme({
       500: '#f5f5f6',
     },
     text: {
-      primary: '#333',
+      primary: variables.color.gray,
       secondary: 'rgba(0,0,0,.8)',
     },
   },
@@ -39,7 +44,7 @@ export const theme = createMuiTheme({
       fontSize: 24,
       fontWeight: 700,
       letterSpacing: -1,
-      '@media (min-width: 1104px)': {
+      '@media (min-width: 1154px)': {
         fontWeight: 400,
         fontSize: 36,
       },
@@ -48,21 +53,21 @@ export const theme = createMuiTheme({
       },
     },
     h2: {
-      color: '#333',
+      color: variables.color.gray,
       fontSize: 20,
       letterSpacing: -1,
       fontWeight: 700,
       textAlign: 'center',
       paddingTop: 48,
       paddingBottom: 32,
-      '@media (min-width: 1104px)': {
+      '@media (min-width: 1154px)': {
         fontWeight: 400,
         fontSize: 36,
         textAlign: 'left',
       },
     },
     h4: {
-      color: '#333',
+      color: variables.color.gray,
       fontSize: '1.0625rem',
       letterSpacing: -1,
     },
