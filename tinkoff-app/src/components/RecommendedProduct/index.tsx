@@ -11,10 +11,12 @@ import { useCommonStyles } from '../../commonStyles';
 import { Link } from 'react-router-dom';
 
 export const RecommendedProduct = () => {
+  const theme = useTheme();
   const classes = useStyles();
   const commonClasses = useCommonStyles();
-  const theme = useTheme();
+
   const matches = useMediaQuery(`(max-width: ${ theme.breakpoints.values.lg - 1 }px)`);
+
   const createCards = cardsData.map((card, index) => {
     const { id, link, buttonText } = card;
 
@@ -35,9 +37,7 @@ export const RecommendedProduct = () => {
   return (
     <div className={ classes.wrapper }>
       <Container>
-        <Typography variant='h2'>
-          <p className={ classes.subtitle }>Рекомендуемые продукты</p>
-        </Typography>
+        <Typography variant='h2'>Рекомендуемые продукты</Typography>
 
         <Grid
           spacing={ 6 } container>

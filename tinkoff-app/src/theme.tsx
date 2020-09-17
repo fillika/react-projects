@@ -1,4 +1,4 @@
-import { createMuiTheme } from '@material-ui/core';
+import { createMuiTheme, useTheme } from '@material-ui/core';
 
 /**
  * Тут Я создаю тему и передаю в настройки объект
@@ -35,17 +35,34 @@ export const theme = createMuiTheme({
       fontSize: '0.75rem',
     },
     h1: {
-      color: 'rgba(0,0,0,0.8)',
-      fontSize: '3rem',
+      color: 'rgba(0,0,0, 0.8)',
+      fontSize: 24,
+      fontWeight: 700,
       letterSpacing: -1,
+      '@media (min-width: 1104px)': {
+        fontWeight: 400,
+        fontSize: 36,
+      },
+      '@media (min-width: 1360px)': {
+        fontSize: 44,
+      },
     },
     h2: {
-      color: 'rgba(0,0,0,0.8)',
-      fontSize: '1.875rem',
+      color: '#333',
+      fontSize: 20,
       letterSpacing: -1,
+      fontWeight: 700,
+      textAlign: 'center',
+      paddingTop: 48,
+      paddingBottom: 32,
+      '@media (min-width: 1104px)': {
+        fontWeight: 400,
+        fontSize: 36,
+        textAlign: 'left',
+      },
     },
     h4: {
-      color: 'rgba(0,0,0,0.8)',
+      color: '#333',
       fontSize: '1.0625rem',
       letterSpacing: -1,
     },

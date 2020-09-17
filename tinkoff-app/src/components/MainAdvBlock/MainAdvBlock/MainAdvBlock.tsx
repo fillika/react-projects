@@ -8,6 +8,18 @@ import { DesktopContent } from '../DesktopContent';
 import { useMediaQuery, useTheme } from '@material-ui/core';
 import { useStyles } from './style';
 
+export const MainAdvBlock: React.FC = () => {
+  const theme = useTheme();
+  const classes = useStyles();
+  const matches = useMediaQuery(theme.breakpoints.down('md'));
+
+  const item = Math.floor(Math.random() * firstAdvBlockData.length);
+  let data = firstAdvBlockData[item]; // Случайный баннер
+
+  return <div className={ classes.wrapper }>{ matches ? <MobileContent { ...data } /> :
+    <DesktopContent { ...data } /> }</div>;
+};
+
 /**
  * NOTE: Понять, куда определять данные для рендера
  */
@@ -163,14 +175,3 @@ const firstAdvBlockData: TComponentData[] = [
     },
   },
 ];
-
-export const MainAdvBlock: React.FC = () => {
-  const theme = useTheme();
-  const classes = useStyles();
-  const matches = useMediaQuery(theme.breakpoints.down('md'));
-
-  const item = Math.floor(Math.random() * firstAdvBlockData.length);
-  let data = firstAdvBlockData[item]; // Случайный баннер
-
-  return <div className={classes.wrapper}>{matches ? <MobileContent {...data} /> : <DesktopContent {...data} />}</div>;
-};

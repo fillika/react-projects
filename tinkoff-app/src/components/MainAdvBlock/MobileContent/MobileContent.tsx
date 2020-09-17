@@ -14,23 +14,23 @@ export const MobileContent: React.FC<TComponentData> = props => {
 
   return (
     <Container>
-      <div className={classes.textWrapper}>
+      <div className={ classes.textWrapper }>
         <Typography variant='h1'>
-          <Typography className={classes.title}>{title}</Typography>
+          { title }
         </Typography>
 
-        <Typography className={classes.subTitle}>{subTitle}</Typography>
+        <Typography className={ classes.subTitle }>{ subTitle }</Typography>
       </div>
 
-      <div className={classes.imageWrapper}>
-        <div className={classes.image}>
-          <AdvImage {...image} />
+      <div className={ classes.imageWrapper }>
+        <div className={ classes.image }>
+          <AdvImage { ...image } />
         </div>
 
-        <div className={classes.buttonWrapper}>
-          <Link to={button.link}>
-            <Button className={classes.button} variant='contained' color='primary'>
-              {button.text}
+        <div className={ classes.buttonWrapper }>
+          <Link to={ button.link }>
+            <Button className={ classes.button } variant='contained' color='primary'>
+              { button.text }
             </Button>
           </Link>
         </div>
