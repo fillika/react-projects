@@ -1,19 +1,22 @@
 import React from 'react';
 
-import { Container, Grid, Typography, useMediaQuery, useTheme } from '@material-ui/core';
+import { Button, Container, Grid, Typography, useMediaQuery, useTheme } from '@material-ui/core';
 
 import { Card } from '../Common/Card';
 
 import { TCard } from '../Common/Card/types';
 
 import { useStyles } from './style';
+import { useCommonStyles } from '../../commonStyles';
+import { Link } from 'react-router-dom';
 
 export const RecommendedProduct = () => {
   const classes = useStyles();
+  const commonClasses = useCommonStyles();
   const theme = useTheme();
   const matches = useMediaQuery(`(max-width: ${ theme.breakpoints.values.lg - 1 }px)`);
   const createCards = cardsData.map((card, index) => {
-    const { id } = card;
+    const { id, link, buttonText } = card;
 
     /**
      * Проверка для того, чтобы на мобильной версии было не более 4 карточек
@@ -22,7 +25,11 @@ export const RecommendedProduct = () => {
       return null;
     }
 
-    return <Card { ...card } key={ id }/>;
+    return (<Card { ...card } key={ id }>
+      <Button className={ commonClasses.blueButton }>
+        <Link style={ { color: '#1771e6' } } to={ link }>{ buttonText }</Link>
+      </Button>
+    </Card>);
   });
 
   return (
@@ -32,7 +39,8 @@ export const RecommendedProduct = () => {
           <p className={ classes.subtitle }>Рекомендуемые продукты</p>
         </Typography>
 
-        <Grid spacing={ 6 } container>
+        <Grid
+          spacing={ 6 } container>
           { createCards }
         </Grid>
       </Container>

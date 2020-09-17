@@ -1,10 +1,19 @@
 import React from 'react';
-import { Container, Grid, Typography } from '@material-ui/core';
+import { Button, Container, Grid, Typography } from '@material-ui/core';
 import { Card } from '../Common/Card';
 import { TCard } from '../Common/Card/types';
 
+import {useCommonStyles} from '../../commonStyles';
+
 export const YouNeedToKnow: React.FC = () => {
-  const renderCards = cardsData.map(data => <Card { ...data } id={ data.id }/>);
+  const commonClasses = useCommonStyles();
+
+  const renderCards = cardsData.map(data => (
+    <Card { ...data } key={ data.id }>
+      <Button href={data.link} className={ commonClasses.blueButton }>
+        <span style={ { color: '#1771e6' } }>{ data.buttonText }</span>
+      </Button>
+    </Card>));
 
   return (
     <Container>

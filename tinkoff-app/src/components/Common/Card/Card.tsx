@@ -3,16 +3,14 @@ import { Link } from 'react-router-dom';
 
 import { CardImage } from '../CardImage';
 
-import { Typography, Grid, Button } from '@material-ui/core';
+import { Typography, Grid } from '@material-ui/core';
 
 import { useStyles } from './style';
-import { useCommonStyles } from '../../../commonStyles';
 import { TCard, TTitle } from './types';
 
 export const Card: React.FC<TCard> = props => {
-  const { link, title, subTitle, buttonText, image } = props;
+  const { link, title, subTitle, image, children } = props;
   const classes = useStyles();
-  const commonClasses = useCommonStyles();
 
   return (
     <Grid item xs={ 12 } lg={ 4 }>
@@ -31,9 +29,7 @@ export const Card: React.FC<TCard> = props => {
         </Grid>
 
         <Grid style={ { marginTop: 'auto' } } item>
-          <Button className={ commonClasses.blueButton }>
-            <Link style={ { color: '#1771e6' } } to={ link }>{ buttonText }</Link>
-          </Button>
+          { children }
         </Grid>
       </Grid>
     </Grid>
