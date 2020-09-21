@@ -1,7 +1,6 @@
-import { makeStyles, createStyles } from '@material-ui/core';
+import {makeStyles, createStyles} from '@material-ui/core';
 
-export const useStyle = makeStyles(theme =>
-  createStyles({
+export const useStyle = makeStyles(theme => createStyles({
     wrapper: {
       backgroundColor: theme.palette.grey[500],
       paddingTop: theme.spacing(1) - 6,

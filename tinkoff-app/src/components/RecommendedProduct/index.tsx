@@ -1,24 +1,21 @@
 import React from 'react';
 
-import { Button, Container, Grid, Typography, useMediaQuery, useTheme } from '@material-ui/core';
+import { Container, Grid, Typography, useMediaQuery, useTheme } from '@material-ui/core';
 
 import { Card } from '../Common/Card';
 
 import { TCard } from '../Common/Card/types';
 
 import { useStyles } from './style';
-import { useCommonStyles } from '../../commonStyles';
-import { Link } from 'react-router-dom';
 
 export const RecommendedProduct = () => {
   const theme = useTheme();
   const classes = useStyles();
-  const commonClasses = useCommonStyles();
 
-  const matches = useMediaQuery(`(max-width: ${ theme.breakpoints.values.lg - 1 }px)`);
+  const matches = useMediaQuery( `(max-width: ${ theme.breakpoints.values.lg - 1 }px)` );
 
-  const createCards = cardsData.map((card, index) => {
-    const { id, link, buttonText } = card;
+  const createCards = cardsData.map( ( card, index ) => {
+    const { id } = card;
 
     /**
      * Проверка для того, чтобы на мобильной версии было не более 4 карточек
@@ -27,12 +24,8 @@ export const RecommendedProduct = () => {
       return null;
     }
 
-    return (<Card { ...card } key={ id }>
-      <Button className={ commonClasses.blueButton }>
-        <Link style={ { color: '#1771e6' } } to={ link }>{ buttonText }</Link>
-      </Button>
-    </Card>);
-  });
+    return (<Card { ...card } key={ id }/>);
+  } );
 
   return (
     <div className={ classes.wrapper }>
@@ -55,6 +48,7 @@ const cardsData: TCard[] = [
     title: 'Дебетовая карта Tinkoff Black',
     subTitle: 'Кэшбэк до 30% и ежемесячный процент на остаток',
     buttonText: 'Оформить карту',
+    isLink: true,
     image: {
       alt: 'Кредит наличными Тинькофф',
       src: 'https://acdn.tinkoff.ru/static/pages/files/e851d301-8b14-4602-81ee-1a99abb79e99.png',
@@ -75,6 +69,7 @@ const cardsData: TCard[] = [
     title: 'Инвестиции',
     subTitle: 'Советы по выбору акций и удобное приложение',
     buttonText: 'Стать инвестором',
+    isLink: true,
     image: {
       alt: 'Тинькофф Инвестиции',
       src: 'https://acdn.tinkoff.ru/static/pages/files/99c0b4ed-bffc-4c94-a0af-bda8f69b60fb.png',
@@ -95,6 +90,7 @@ const cardsData: TCard[] = [
     title: 'Тинькофф Платинум',
     subTitle: 'Кредитный лимит до 700 000 ₽. Без процентов до года',
     buttonText: 'Оформить карту',
+    isLink: true,
     image: {
       alt: 'Тинькофф Платинум',
       src: 'https://acdn.tinkoff.ru/static/pages/files/8d3123c3-8de4-475c-84ac-1a2688181526.png',
@@ -115,6 +111,7 @@ const cardsData: TCard[] = [
     title: 'Тинькофф Мобайл',
     subTitle: 'Попробуйте бесплатно: голосовой помощник, 600 минут, 20 ГБ',
     buttonText: 'Заказать сим-карту',
+    isLink: true,
     image: {
       alt: 'Тинькофф Мобайл',
       src: 'https://acdn.tinkoff.ru/static/pages/files/9a4d1571-fe8c-4ec2-a273-3545983f1f13.png',
@@ -135,6 +132,7 @@ const cardsData: TCard[] = [
     title: 'Счет для бизнеса',
     subTitle: 'До 4% на остаток и до 4 месяцев бесплатно. Всё онлайн',
     buttonText: 'Открыть счет',
+    isLink: true,
     image: {
       alt: 'Тинькофф Бизнес',
       src: 'https://acdn.tinkoff.ru/static/pages/files/c3500acc-bf3b-48d4-a3f3-88f612f4c18d.png',
@@ -155,6 +153,7 @@ const cardsData: TCard[] = [
     title: 'Бесплатная детская карта',
     subTitle: 'Бонусы за покупки. Возврат денег за оплату в кафе и интернете',
     buttonText: 'Оформить карту',
+    isLink: true,
     image: {
       alt: 'Тинькофф Джуниор',
       src: 'https://acdn.tinkoff.ru/static/pages/files/b0613bf2-a946-46a1-89fa-755e64626109.png',

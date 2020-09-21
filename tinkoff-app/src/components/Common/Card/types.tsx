@@ -6,6 +6,7 @@ export type TCard = {
   title: string | null;
   subTitle: string;
   buttonText: string;
+  isLink: boolean;
   image: TImage;
 };
 

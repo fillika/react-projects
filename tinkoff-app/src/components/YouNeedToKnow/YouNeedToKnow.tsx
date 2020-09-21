@@ -8,12 +8,12 @@ import { useCommonStyles } from '../../commonStyles';
 export const YouNeedToKnow: React.FC = () => {
   const commonClasses = useCommonStyles();
 
-  const renderCards = cardsData.map(data => (
+  const renderCards = cardsData.map( data => (
     <Card { ...data } key={ data.id }>
       <Button href={ data.link } className={ commonClasses.blueButton }>
         <span style={ { color: '#1771e6' } }>{ data.buttonText }</span>
       </Button>
-    </Card>));
+    </Card>) );
 
   return (
     <Container>
@@ -35,6 +35,7 @@ const cardsData: TCard[] = [
     title: null,
     subTitle: 'Что вам должны при потере работы и дохода',
     buttonText: 'Узнать больше',
+    isLink: false,
     image: {
       alt: 'Что вам должны во время карантина',
       src: 'https://acdn.tinkoff.ru/static/pages/files/d37ec1f8-df60-4acb-aa0d-f2ace21ef656.png',
@@ -52,6 +53,7 @@ const cardsData: TCard[] = [
     title: null,
     subTitle: 'Кредитные каникулы: кто и как может получить',
     buttonText: 'Читать',
+    isLink: false,
     image: {
       alt: 'Кредитные каникулы: кто и как может получить',
       src: 'https://acdn.tinkoff.ru/static/pages/files/acdf39e9-40a4-411b-9114-bb169ceae7ad.png',
@@ -69,6 +71,7 @@ const cardsData: TCard[] = [
     title: null,
     subTitle: 'Как получить повышенные пособия по безработице из-за короновируса',
     buttonText: 'Читать',
+    isLink: false,
     image: {
       alt: 'Как получить повышенные пособия по безработице ',
       src: 'https://acdn.tinkoff.ru/static/pages/files/5d7f7a46-8a30-4d0b-bae5-c9c1dde30ff5.png',
