@@ -14,17 +14,25 @@ export const Card: React.FC<TCard> = props => {
   const classes = useStyles();
   const commonClasses = useCommonStyles();
 
+  /**
+   * Это ссылка-обертка на всю карточку. В зависимости от параметра isLink
+   * Я подставляю либо ссылку для роутинга, либо реальную ссылку
+   */
   const wrapLink = isLink
     ? <Link className={ classes.wrapperLink } to={ link }/>
-    : <a className={ classes.wrapperLink } href={ link }>&nbsp;</a>
+    : <a target='_blank' className={ classes.wrapperLink } href={ link }>&nbsp;</a>
 
+  /**
+   * Это ссылка-кнопка для карточки В зависимости от параметра isLink
+   * Я подставляю либо ссылку для роутинга, либо реальную ссылку
+   */
   const button = isLink
     ? <Button className={ commonClasses.blueButton }>
-        <Link style={ { color: '#1771e6' } } to={ link }>{ buttonText }</Link>
-      </Button>
-    : <Button href={ link } className={ commonClasses.blueButton }>
-        <span style={ { color: '#1771e6' } }>{ buttonText }</span>
-      </Button>
+      <Link style={ { color: '#1771e6' } } to={ link }>{ buttonText }</Link>
+    </Button>
+    : <Button className={ commonClasses.blueButton }>
+      <a style={ { color: '#1771e6' } } target='_blank' href={ link }>{ buttonText }</a>
+    </Button>
 
   return (
     <Grid item xs={ 12 } lg={ 4 }>
@@ -36,9 +44,7 @@ export const Card: React.FC<TCard> = props => {
         </Grid>
 
         <Grid item className={ classes.textWrapper }>
-
           <Title classes={ classes } title={ title }/>
-
           <Typography className={ classes.subtitle }>{ subTitle }</Typography>
         </Grid>
 
