@@ -2,28 +2,35 @@ import React from "react";
 import { Card } from '../../Common/Card';
 import { Button, Container } from "@material-ui/core";
 import { useStyles } from "./style";
+import { TCard } from "../../Common/Card/types";
 
 export const MobileContent: React.FC = () => {
   const render = mobileData.map(data => <SmallCard { ...data } key={ data.id }/>);
   const classes = useStyles();
 
+  const cardData: TCard = {
+    id: 1,
+    link: 'https://karantin.project.tinkoff.ru/?internal_source=home#entertainment',
+    title: 'Чем себя занять на карантине?',
+    subTitle: 'Собрали все самое важное и&nbsp;полезное, чтобы&nbsp;помочь вам во&nbsp;время карантина и&nbsp;после&nbsp;него',
+    buttonText: 'Провести время с пользой',
+    isLink: false,
+    image: {
+      alt: 'Чем себя занять на карантине',
+      src: 'https://acdn.tinkoff.ru/static/pages/files/08c98d66-1743-4526-9768-f360bd4d8c49.png',
+      srcSet: '',
+      webp: '',
+      mobile: {
+        img: 'https://acdn.tinkoff.ru/static/pages/files/08c98d66-1743-4526-9768-f360bd4d8c49.png 1x, https://acdn.tinkoff.ru/static/pages/files/427e1bac-4b51-4177-ab3b-b51549028f26.png 2x',
+        webp: 'https://acdn.tinkoff.ru/static/pages/files/62f12055-d9c0-4908-b207-c9dae1032e3a.webp 1x, https://acdn.tinkoff.ru/static/pages/files/ab6e297c-f6f7-4e62-b153-1df8f90f316c.webp 2x',
+      },
+    }
+  };
+
   return (
     <>
       <Container style={ { paddingBottom: '24px' } }>
-        <Card
-          id={ 1 } link='https://karantin.project.tinkoff.ru/?internal_source=home#entertainment'
-          title='Чем себя занять на карантине?'
-          subTitle='Собрали все самое важное и&nbsp;полезное, чтобы&nbsp;помочь вам во&nbsp;время карантина и&nbsp;после&nbsp;него'
-          buttonText='Провести время с пользой' isLink={ false } image={ {
-          alt: 'Чем себя занять на карантине',
-          src: 'https://acdn.tinkoff.ru/static/pages/files/08c98d66-1743-4526-9768-f360bd4d8c49.png',
-          srcSet: '',
-          webp: '',
-          mobile: {
-            img: 'https://acdn.tinkoff.ru/static/pages/files/08c98d66-1743-4526-9768-f360bd4d8c49.png 1x, https://acdn.tinkoff.ru/static/pages/files/427e1bac-4b51-4177-ab3b-b51549028f26.png 2x',
-            webp: 'https://acdn.tinkoff.ru/static/pages/files/62f12055-d9c0-4908-b207-c9dae1032e3a.webp 1x, https://acdn.tinkoff.ru/static/pages/files/ab6e297c-f6f7-4e62-b153-1df8f90f316c.webp 2x',
-          },
-        } }/>
+        <Card { ...cardData } />
       </Container>
 
       <div className={ classes.wrapper }>
@@ -31,7 +38,6 @@ export const MobileContent: React.FC = () => {
           <div style={ { display: 'flex', overflowX: 'scroll' } }>
             { render }
           </div>
-
         </Container>
       </div>
     </>
@@ -45,10 +51,8 @@ const SmallCard: React.FC<TmobileData> = props => {
     <div>
       <div>
         <picture>
-          <source
-            srcSet={ webp } type='image/webp'/>
-          <img
-            loading='lazy' src={ src } srcSet={ srcSet } alt={ title }/>
+          <source srcSet={ webp } type='image/webp'/>
+          <img loading='lazy' src={ src } srcSet={ srcSet } alt={ title }/>
         </picture>
       </div>
 
