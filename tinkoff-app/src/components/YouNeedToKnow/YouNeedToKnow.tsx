@@ -12,13 +12,13 @@ export const YouNeedToKnow: React.FC = () => {
   const render = isDesktop ? <DesktopContent/> : <MobileContent/>
 
   return (
-    <Container>
+    <div>
       <Typography variant='h2'>
         <p>Важно знать во время карантина</p>
       </Typography>
 
       { render }
-    </Container>
+    </div>
   );
 };
 

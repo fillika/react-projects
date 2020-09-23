@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, Grid } from "@material-ui/core";
+import { Button, Container, Grid } from "@material-ui/core";
 import { useCommonStyles } from "../../../commonStyles";
 
 import { Card } from "../../Common/Card";
@@ -17,8 +17,10 @@ export const DesktopContent: React.FC = () => {
     </Card>) );
 
   return (
-    <Grid spacing={ 6 } container>
-      { renderCards }
-    </Grid>
+    <Container>
+      <Grid spacing={ 6 } container>
+        { renderCards }
+      </Grid>
+    </Container>
   )
 }

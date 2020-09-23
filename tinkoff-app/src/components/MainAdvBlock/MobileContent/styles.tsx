@@ -20,7 +20,6 @@ export const useStyles = makeStyles(theme =>
     },
     imageWrapper: {
       height: '328px',
-      overflow: 'hidden',
       position: 'relative',
     },
     image: {
