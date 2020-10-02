@@ -3,12 +3,11 @@ import { makeStyles, createStyles } from "@material-ui/core";
 export const useStyle = makeStyles(theme => createStyles({
   wrapper: {
     boxShadow: 'inset 0 1px 0 0 #e7e8ea',
-    marginTop: theme.spacing(16)
+    paddingTop: theme.spacing(2) - 3,
+    paddingBottom: theme.spacing(1) + 4,
   },
   innerWrapper: {
     marginTop: 0,
-    paddingTop: theme.spacing(2) - 3,
-    paddingBottom: theme.spacing(1) - 5,
     display: 'flex',
     justifyContent: 'space-between'
   },
