@@ -20,7 +20,7 @@ export const Card: React.FC<TCard> = props => {
    */
   const wrapLink = isLink
     ? <Link className={ classes.wrapperLink } to={ link }/>
-    : <a target='_blank' className={ classes.wrapperLink } href={ link }>&nbsp;</a>
+    : <a rel='noopener noreferrer' target='_blank' className={ classes.wrapperLink } href={ link }>&nbsp;</a>;
 
   /**
    * Это ссылка-кнопка для карточки В зависимости от параметра isLink
@@ -31,8 +31,8 @@ export const Card: React.FC<TCard> = props => {
       <Link style={ { color: '#1771e6' } } to={ link }>{ buttonText }</Link>
     </Button>
     : <Button className={ commonClasses.blueButton }>
-      <a style={ { color: '#1771e6' } } target='_blank' href={ link }>{ buttonText }</a>
-    </Button>
+      <a style={ { color: '#1771e6' } } rel='noopener noreferrer' target='_blank' href={ link }>{ buttonText }</a>
+    </Button>;
 
   return (
     <Grid item xs={ 12 } lg={ 4 }>

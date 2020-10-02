@@ -7,15 +7,17 @@ import { MobileContent } from "./MobileContent";
 
 export const YouNeedToKnow: React.FC = () => {
   const theme = useTheme();
-  const isDesktop = useMediaQuery( theme.breakpoints.up( 'lg' ) );
+  const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
 
-  const render = isDesktop ? <DesktopContent/> : <MobileContent/>
+  const render = isDesktop ? <DesktopContent/> : <MobileContent/>;
 
   return (
     <div>
-      <Typography variant='h2'>
-        <p>Важно знать во время карантина</p>
-      </Typography>
+      <Container>
+        <Typography variant='h2'>
+          Важно знать во время карантина
+        </Typography>
+      </Container>
 
       { render }
     </div>

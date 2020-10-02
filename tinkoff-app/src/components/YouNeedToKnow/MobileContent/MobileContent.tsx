@@ -62,7 +62,7 @@ const SmallCard: React.FC<TmobileData> = props => {
 
       <div>
         <Button variant='outlined'>
-          <a target='_blank' href={ href }>{ text }</a>
+          <a rel='noopener noreferrer' target='_blank' href={ href }>{ text }</a>
         </Button>
       </div>
     </div>
