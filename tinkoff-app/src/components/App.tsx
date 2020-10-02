@@ -1,11 +1,13 @@
 import React from 'react';
 
+import {
+  Switch,
+  Route,
+} from "react-router-dom";
+
 import { Header } from './Header';
-import { MainAdvBlock } from './MainAdvBlock';
-import { RecommendedProduct } from './RecommendedProduct';
-import { BestMobileApp } from './BestMobileApp';
-import { Services } from './Services';
-import { YouNeedToKnow } from './YouNeedToKnow';
+import { MainPage } from "./pages/MainPage";
+import { Footer } from "./Common/Footer";
 
 export const App: React.FC = () => {
   return (
@@ -13,18 +15,15 @@ export const App: React.FC = () => {
       <Header/>
 
       <main>
-        <MainAdvBlock/>
-        <RecommendedProduct/>
-        <BestMobileApp/>
-        <Services/>
-        <YouNeedToKnow/>
+        <Switch>
+          <Route exact path='/'>
+            <MainPage/>
+          </Route>
+        </Switch>
       </main>
 
       <footer>
-        <div>
-          <p>{/* <a href='tel:+78003337733'>8 800 333-77-33</a> */ }</p>
-          <p>Для звонков по всей России</p>
-        </div>
+        <Footer/>
 
         <div>Тут будут соц. сети</div>
 

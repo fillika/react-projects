@@ -32,6 +32,10 @@ export const useStyles = makeStyles(theme =>
       fontWeight: 500,
       fontSize: '0.7em',
 
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '0.6em',
+      },
+
       '&:visited': {
         color: '#959ba4',
       },
