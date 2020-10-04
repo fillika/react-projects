@@ -5,8 +5,8 @@ import { useStyles } from "./style";
 import { TCard } from "../../Common/Card/types";
 
 export const MobileContent: React.FC = () => {
-  const render = mobileData.map(data => <SmallCard { ...data } key={ data.id }/>);
   const classes = useStyles();
+  const render = mobileData.map(data => <SmallCard { ...data } key={ data.id }/>);
 
   const cardData: TCard = {
     id: 1,
@@ -35,7 +35,7 @@ export const MobileContent: React.FC = () => {
 
       <div className={ classes.wrapper }>
         <Container>
-          <div style={ { display: 'flex', overflowX: 'scroll' } }>
+          <div className={ classes.container }>
             { render }
           </div>
         </Container>
@@ -46,9 +46,10 @@ export const MobileContent: React.FC = () => {
 
 const SmallCard: React.FC<TmobileData> = props => {
   const { title, image: { src, srcSet, webp }, link: { href, text } } = props;
+  const classes = useStyles();
 
   return (
-    <div>
+    <div className={ classes.cardWrapper }>
       <div>
         <picture>
           <source srcSet={ webp } type='image/webp'/>
@@ -56,13 +57,11 @@ const SmallCard: React.FC<TmobileData> = props => {
         </picture>
       </div>
 
-      <div>
-        <p dangerouslySetInnerHTML={ { __html: title } }/>
-      </div>
+      <p className={ classes.cardTitle } dangerouslySetInnerHTML={ { __html: title } }/>
 
-      <div>
-        <Button variant='outlined'>
-          <a rel='noopener noreferrer' target='_blank' href={ href }>{ text }</a>
+      <div className={ classes.buttonWrapper }>
+        <Button className={ classes.cardButton } variant='outlined'>
+          <a className={ classes.cardLink } rel='noopener noreferrer' target='_blank' href={ href }>{ text }</a>
         </Button>
       </div>
     </div>
@@ -148,5 +147,5 @@ type TmobileData = {
     src: string;
     srcSet: string;
     webp: string;
-  }
+  },
 }

@@ -5,6 +5,7 @@ import { DesktopNavigation } from "./DesktopNavigation";
 import { Container, useMediaQuery, useTheme } from "@material-ui/core";
 import { useStyle } from "./style";
 import { Information } from "../Information";
+import { Award } from "../Award";
 
 export const FooterNavigation: React.FC = () => {
   const classes = useStyle();
@@ -21,6 +22,7 @@ export const FooterNavigation: React.FC = () => {
         }
 
         <Information/>
+        <Award/>
       </Container>
     </div>
   );

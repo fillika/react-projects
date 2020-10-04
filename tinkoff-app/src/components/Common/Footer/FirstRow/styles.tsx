@@ -1,15 +1,20 @@
 import { makeStyles, createStyles } from "@material-ui/core";
 
-export const useStyle = makeStyles(theme => createStyles({
+export const useStyle = makeStyles(({ spacing }) => createStyles({
   wrapper: {
     boxShadow: 'inset 0 1px 0 0 #e7e8ea',
-    paddingTop: theme.spacing(2) - 3,
-    paddingBottom: theme.spacing(1) + 4,
+    paddingTop: spacing(2) - 3,
+    paddingBottom: spacing(1) + 4,
+    marginTop: spacing(16)
   },
   innerWrapper: {
     marginTop: 0,
     display: 'flex',
     justifyContent: 'space-between'
+  },
+  headLink: {
+    color: '#333',
+    fontSize: 15
   },
   link: {
     color: '#1771e6',
@@ -24,7 +29,7 @@ export const useStyle = makeStyles(theme => createStyles({
   linkWrapper: {
     paddingTop: 0,
     paddingBottom: 0,
-    marginRight: theme.spacing(2)
+    marginRight: spacing(2)
   },
   phone: {
     transition: 'color .15s ease-in-out',

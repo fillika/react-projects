@@ -13,7 +13,7 @@ export const FirstRow: React.FC = () => {
 
           <div>
             <p>
-              <Link to='/about/'>Тинькофф</Link>
+              <Link className={classes.headLink} to='/about/'>Тинькофф</Link>
             </p>
 
             <Grid container>
