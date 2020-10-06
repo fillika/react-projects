@@ -6,6 +6,7 @@ import { Container, useMediaQuery, useTheme } from "@material-ui/core";
 import { useStyle } from "./style";
 import { Information } from "../Information";
 import { Award } from "../Award";
+import { Basement } from "../Basement";
 
 export const FooterNavigation: React.FC = () => {
   const classes = useStyle();
@@ -23,6 +24,7 @@ export const FooterNavigation: React.FC = () => {
 
         <Information/>
         <Award/>
+        <Basement/>
       </Container>
     </div>
   );

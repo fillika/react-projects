@@ -16,8 +16,6 @@ type TNavigation = {
 }
 
 export const DesktopNavigation: React.FC = () => {
-  const classes = useStyle();
-
   const renderColumn = NavigationsLinks.map(data => {
     const { id, listLink, headLink } = data;
 
