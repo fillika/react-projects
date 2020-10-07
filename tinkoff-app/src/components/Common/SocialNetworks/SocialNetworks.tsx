@@ -8,9 +8,10 @@ type TSVGIcon = {
 
 export const SocialNetworks: React.FC = () => {
   const renderIcons = SVGData.map((data, idx) => <SVGIcon d={ data.d } href={ data.href } key={ data.href + idx }/>);
+  const classes = useStyle();
 
   return (
-    <div>
+    <div className={ classes.wrapper }>
       { renderIcons }
     </div>
   );
@@ -21,7 +22,7 @@ const SVGIcon: React.FC<TSVGIcon> = props => {
   const classes = useStyle();
 
   return (
-    <a className={classes.link} rel='noopener noreferrer' target='_blank' href={ href }>
+    <a className={ classes.link } rel='noopener noreferrer' target='_blank' href={ href }>
       <svg xmlns='http://www.w3.org/2000/svg' width='18' height='18'>
         <path d={ d } fill='currentColor'/>
       </svg>
