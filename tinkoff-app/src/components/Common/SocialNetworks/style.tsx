@@ -1,8 +1,12 @@
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 
-export const useStyle = makeStyles(({ palette }) => createStyles({
+export const useStyle = makeStyles(({ palette, spacing, breakpoints }) => createStyles({
   wrapper: {
-    display: 'flex'
+    display: 'flex',
+    marginBottom: spacing(2),
+    [breakpoints.up('lg')]: {
+      marginBottom: 0,
+    }
   },
   link: {
     color: 'rgba(0,0,0, 0.4)',
@@ -16,7 +20,7 @@ export const useStyle = makeStyles(({ palette }) => createStyles({
     alignItems: 'center',
     backgroundColor: palette.grey[500],
     marginLeft: 7,
-    marginRight: 7,
+    marginRight: 0,
 
     '&:visited': {
       color: 'rgba(0,0,0, 0.4)',
@@ -33,5 +37,9 @@ export const useStyle = makeStyles(({ palette }) => createStyles({
     '&:last-child': {
       marginRight: 0
     },
+
+    [breakpoints.up('xs')]: {
+      marginRight: 7,
+    }
   }
 }));

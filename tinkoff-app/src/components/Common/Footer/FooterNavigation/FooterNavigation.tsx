@@ -16,11 +16,7 @@ export const FooterNavigation: React.FC = () => {
   return (
     <div className={ classes.wrapper }>
       <Container>
-        {
-          matches
-            ? <DesktopNavigation/>
-            : ''
-        }
+        { matches && <DesktopNavigation/> }
 
         <Information/>
         <Award/>

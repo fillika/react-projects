@@ -1,11 +1,13 @@
 import { makeStyles, createStyles } from "@material-ui/core";
 
-export const useStyle = makeStyles(({ spacing }) => createStyles({
+export const useStyle = makeStyles(({ spacing, breakpoints }) => createStyles({
   wrapper: {
-    boxShadow: 'inset 0 1px 0 0 #e7e8ea',
     paddingTop: spacing(2) - 3,
     paddingBottom: spacing(1) + 4,
-    marginTop: spacing(16)
+    marginTop: spacing(16),
+    [breakpoints.up('lg')]: {
+      boxShadow: 'inset 0 1px 0 0 #e7e8ea',
+    }
   },
   innerWrapper: {
     marginTop: 0,
@@ -42,15 +44,27 @@ export const useStyle = makeStyles(({ spacing }) => createStyles({
     marginBottom: 2,
     whiteSpace: 'nowrap',
     outline: 0,
-    textAlign: 'right',
+    textAlign: 'center',
     '& > a': {
       color: 'rgba(0,0,0,.8)',
+    },
+    [breakpoints.up('lg')]: {
+      textAlign: 'right',
+
     }
   },
   signature: {
     color: 'rgba(0,0,0,.4)',
     fontSize: 13,
-    textAlign: 'right',
-    marginTop: 'auto'
+    textAlign: 'center',
+    marginTop: 'auto',
+    marginBottom: spacing(2),
+    [breakpoints.up('lg')]: {
+      textAlign: 'right',
+      marginBottom: 0,
+    }
+  },
+  contacts: {
+    margin: '0 auto'
   }
 }));
