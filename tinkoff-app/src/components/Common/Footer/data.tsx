@@ -1,6 +1,60 @@
 import { TNavigation } from "./types";
 
-export const NavigationsLinks: TNavigation[] = [
+export const tinkoffLinksMenuLinks: TNavigation[] = [
+  {
+    id: '1b',
+    headLink: {
+      to: '/about/',
+      name: 'Тинькофф'
+    },
+    listLink: [
+      {
+        to: '/about/',
+        name: 'О банке'
+      },
+      {
+        to: '/about/news/',
+        name: 'Новости'
+      },
+      {
+        to: '/career/',
+        name: 'Работа'
+      },
+      {
+        to: '/maps/payment/?partner=TINKOFF',
+        name: 'Точки пополнения'
+      },
+      {
+        to: '/maps/atm/?partner=tcs',
+        name: 'Банкоматы'
+      },
+      {
+        to: '/about/exchange/',
+        name: 'Курсы валют'
+      },
+      {
+        to: '/contacts/',
+        name: 'Контакты'
+      },
+      {
+        isLink: true,
+        to: 'https://help.tinkoff.ru/',
+        name: 'Помощь'
+      },
+      {
+        to: '/secure/',
+        name: 'Безопасность'
+      },
+      {
+        isLink: true,
+        to: 'https://www.tinkoffgroup.com/',
+        name: 'For investors'
+      },
+    ]
+  },
+];
+
+export const navigationsLinks: TNavigation[] = [
   {
     id: '1a',
     headLink: {

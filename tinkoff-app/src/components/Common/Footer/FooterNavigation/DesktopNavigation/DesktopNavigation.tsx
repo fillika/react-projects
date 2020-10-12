@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import { useStyle } from "./style";
 import { Grid } from "@material-ui/core";
 import { TNavigation } from "../../types";
-import { NavigationsLinks } from "../../data";
-
+import { navigationsLinks } from "../../data";
 
 export const DesktopNavigation: React.FC = () => {
-  const renderColumn = NavigationsLinks.map(data => {
+  const renderColumn = navigationsLinks.map(data => {
     const { id, listLink, headLink } = data;
 
     return <Column key={ id } id={ id } listLink={ listLink } headLink={ headLink }/>;
@@ -16,7 +15,6 @@ export const DesktopNavigation: React.FC = () => {
   return (
     <div>
       <Grid justify='space-between' container>{ renderColumn }</Grid>
-
     </div>
   );
 };

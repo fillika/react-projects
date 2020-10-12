@@ -3,78 +3,52 @@ import { Container, Grid, useMediaQuery, useTheme } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { useStyle } from "./styles";
 import { SocialNetworks } from "../../SocialNetworks";
+import { tinkoffLinksMenuLinks } from "../data";
 
 export const FirstRow: React.FC = () => {
   const classes = useStyle();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('lg'));
-  const desktopMenu = (
-    <Grid container>
-      <Grid className={ classes.linkWrapper } item>
-        <Link className={ classes.link } to='/about/'>О банке</Link>
-      </Grid>
 
-      <Grid className={ classes.linkWrapper } item>
-        <Link className={ classes.link } to='/about/news/'>Новости</Link>
-      </Grid>
+  const renderLinks = tinkoffLinksMenuLinks.map(data => {
+    const { id, headLink, listLink } = data;
 
-      <Grid className={ classes.linkWrapper } item>
-        <Link className={ classes.link } to='/career/'>Работа</Link>
-      </Grid>
+    const links = listLink.map(link => {
+      const { to, name, isLink } = link;
 
-      <Grid className={ classes.linkWrapper } item>
-        <Link className={ classes.link } to='/maps/payment/?partner=TINKOFF'>Точки пополнения</Link>
-      </Grid>
+      return (
+        <Grid key={ to + name } className={ classes.linkWrapper } item>
+          {
+            !isLink
+              ? <Link className={ classes.link } to={ to }>{ name }</Link>
+              : <a className={ classes.link } target='_blank' rel='noopener noreferrer' href={ to }>{ name }</a>
+          }
+        </Grid>
+      );
+    });
 
-      <Grid className={ classes.linkWrapper } item>
-        <Link className={ classes.link } to='/maps/atm/?partner=tcs'>Банкоматы</Link>
-      </Grid>
+    return (
+      <div key={ id }>
+        <p>
+          <Link className={ classes.headLink } to={ headLink.to }>{ headLink.name }</Link>
+        </p>
 
-      <Grid className={ classes.linkWrapper } item>
-        <Link className={ classes.link } to='/about/exchange/'>Курсы валют</Link>
-      </Grid>
+        <Grid container>
+          { links }
+        </Grid>
 
-      <Grid className={ classes.linkWrapper } item>
-        <Link className={ classes.link } to='/contacts/'>Контакты</Link>
-      </Grid>
-
-      <Grid className={ classes.linkWrapper } item>
-        <a
-          className={ classes.link } target='_blank' rel='noopener noreferrer'
-          href='https://help.tinkoff.ru/'>Помощь</a>
-      </Grid>
-
-      <Grid className={ classes.linkWrapper } item>
-        <Link className={ classes.link } to='/secure/'>Безопасность</Link>
-      </Grid>
-
-      <Grid className={ classes.linkWrapper } item>
-        <a
-          className={ classes.link } target='_blank' rel='noopener noreferrer'
-          href='https://www.tinkoffgroup.com/'>For investors</a>
-      </Grid>
-    </Grid>
-  );
+      </div>
+    );
+  });
 
   return (
     <div className={ classes.wrapper }>
       <Container>
         <div className={ classes.innerWrapper }>
 
-          <div>
-            {
-              matches &&
-              <p>
-                <Link className={ classes.headLink } to='/about/'>Тинькофф</Link>
-              </p>
-            }
+          { matches && renderLinks }
 
-            {
-              matches && desktopMenu
-            }
-          </div>
-
-          <div className={classes.contacts}>
+          <div className={ classes.contacts }>
             <p className={ classes.phone }><a href='tel:+78005558679'>8 800 555-86-79</a></p>
             <p className={ classes.signature }>Для звонков по России</p>
 
