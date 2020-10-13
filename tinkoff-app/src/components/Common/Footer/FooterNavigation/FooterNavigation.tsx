@@ -7,6 +7,8 @@ import { useStyle } from "./style";
 import { Information } from "../Information";
 import { Award } from "../Award";
 import { Basement } from "../Basement";
+import { Route, Switch } from "react-router-dom";
+import { MainPage } from "../../../pages/MainPage";
 
 export const FooterNavigation: React.FC = () => {
   const classes = useStyle();
@@ -18,8 +20,13 @@ export const FooterNavigation: React.FC = () => {
       <Container>
         { matches && <DesktopNavigation/> }
 
-        <Information/>
-        <Award/>
+        <Switch>
+          <Route exact path='/'>
+            <Information/>
+            <Award/>
+          </Route>
+        </Switch>
+
         <Basement/>
       </Container>
     </div>

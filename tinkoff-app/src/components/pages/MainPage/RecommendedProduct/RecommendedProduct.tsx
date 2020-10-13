@@ -4,7 +4,7 @@ import { Container, Grid, Typography, useMediaQuery, useTheme } from "@material-
 
 import { useStyles } from "./style";
 
-import { Card } from "../Common/Card";
+import { Card } from "../../../Common/Card";
 import { cardsData } from "./cardsData";
 
 export const RecommendedProduct = () => {

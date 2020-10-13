@@ -8,6 +8,7 @@ import {
 import { Header } from './Header';
 import { MainPage } from "./pages/MainPage";
 import { Footer } from "./Common/Footer";
+import { CreditCards } from "./pages/Cards/CreditCards";
 
 export const App: React.FC = () => {
   return (
@@ -18,6 +19,10 @@ export const App: React.FC = () => {
         <Switch>
           <Route exact path='/'>
             <MainPage/>
+          </Route>
+
+          <Route exact path='/cards/credit-cards/'>
+            <CreditCards/>
           </Route>
         </Switch>
       </main>

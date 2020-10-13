@@ -4,7 +4,7 @@ import { Typography, Button } from '@material-ui/core';
 import AppleIcon from '@material-ui/icons/Apple';
 
 import { useStyles } from './style';
-import { useCommonStyles } from '../../../commonStyles';
+import { useCommonStyles } from '../../../../../commonStyles';
 
 export const TextContent: React.FC = () => {
   const classes = useStyles();

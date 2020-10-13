@@ -1,9 +1,9 @@
 import React from "react";
 
 import { Button, Container, Grid } from "@material-ui/core";
-import { useCommonStyles } from "../../../commonStyles";
+import { useCommonStyles } from "../../../../../commonStyles";
 
-import { Card } from "../../Common/Card";
+import { Card } from "../../../../Common/Card";
 import { cardsData } from "../cardsData";
 
 export const DesktopContent: React.FC = () => {

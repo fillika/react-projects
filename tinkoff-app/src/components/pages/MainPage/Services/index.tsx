@@ -2,10 +2,10 @@ import React from 'react';
 
 import { Container, Typography, Grid } from '@material-ui/core';
 
-import { ServiceCard } from '../Common/ServiceCard';
+import { ServiceCard } from '../../../Common/ServiceCard';
 
 import { useStyles } from './style';
-import { TServiceCardProps } from '../Common/ServiceCard/types';
+import { TServiceCardProps } from '../../../Common/ServiceCard/types';
 
 export const Services: React.FC = () => {
   const classes = useStyles();

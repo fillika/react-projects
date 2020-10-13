@@ -1,4 +1,4 @@
-import { TCard } from "../Common/Card/types";
+import { TCard } from "../../../Common/Card/types";
 
 export const cardsData: TCard[] = [
   {

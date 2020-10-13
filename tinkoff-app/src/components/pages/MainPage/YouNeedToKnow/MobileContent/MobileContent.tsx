@@ -1,8 +1,8 @@
 import React from "react";
-import { Card } from '../../Common/Card';
+import { Card } from '../../../../Common/Card';
 import { Button, Container } from "@material-ui/core";
 import { useStyles } from "./style";
-import { TCard } from "../../Common/Card/types";
+import { TCard } from "../../../../Common/Card/types";
 
 export const MobileContent: React.FC = () => {
   const classes = useStyles();

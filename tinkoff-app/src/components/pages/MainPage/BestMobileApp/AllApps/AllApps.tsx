@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Container, Typography, Button } from '@material-ui/core';
 
 import { useStyles } from './style';
-import { useCommonStyles } from '../../../commonStyles';
+import { useCommonStyles } from '../../../../../commonStyles';
 
 export const AllApps: React.FC = () => {
   const classes = useStyles();
