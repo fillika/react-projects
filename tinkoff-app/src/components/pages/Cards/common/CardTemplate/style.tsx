@@ -1,12 +1,24 @@
 import { createStyles, makeStyles } from '@material-ui/core';
 
-export const useStyles = makeStyles(({ spacing }) =>
+export const useStyles = makeStyles(({ spacing, breakpoints, transitions }) =>
   createStyles({
     wrapper: {
-      display: 'flex'
+      display: 'flex',
+
     },
-    mainProduct: {
+    grayBg: {
       background: 'linear-gradient(90deg, #4d5869, #707c92)',
+      color: '#fff',
+      '& h1, h2, h3, h4, h5, h6': {
+        color: '#fff'
+      },
+      '& p': {
+        color: '#fff',
+        opacity: 0.6
+      },
+    },
+    darkBg: {
+      background: 'linear-gradient(90deg, #6D6D6D, #373737)',
       color: '#fff'
     },
     wrapperHover: {
@@ -18,7 +30,38 @@ export const useStyles = makeStyles(({ spacing }) =>
       }
     },
     imageWrapper: {
-      lineHeight: 0
+      lineHeight: 0,
+      minHeight: 252,
+      [breakpoints.up(1360)]: {
+        minHeight: 296
+      }
+    },
+    textWrapper: {
+      width: '100%',
+      padding: spacing(4),
+      flexGrow: 1
+    },
+    textInnerWrapper: {
+      display: 'flex',
+      flexDirection: 'column',
+      height: '100%',
+      width: 512,
+      [breakpoints.up(1360)]: {
+        width: 660
+      }
+    },
+    titlesWrapper: {
+      paddingBottom: spacing(2),
+    },
+    title: {
+      fontSize: 24,
+      paddingBottom: spacing()
+    },
+    about: {
+      fontSize: 15
+    },
+    smallSubtitle: {
+      fontSize: 13
     },
     description: {
       backgroundColor: 'hsla(0,0%,100%,.64)',
@@ -31,6 +74,20 @@ export const useStyles = makeStyles(({ spacing }) =>
       marginLeft: spacing(4),
       marginBottom: spacing(3),
       display: 'inline-block'
-    }
+    },
+    showCard: {
+      opacity: 0,
+      animation: `200ms $showCard 350ms linear forwards`,
+    },
+    "@keyframes showCard": {
+      "0%": {
+        opacity: 0,
+        transform: "translateY(35%)"
+      },
+      "100%": {
+        opacity: 1,
+        transform: "translateY(0)"
+      }
+    },
   })
 );

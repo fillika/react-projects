@@ -5,9 +5,8 @@ import { CardTemplate } from "../common/CardTemplate";
 export const CreditCards: React.FC = () => {
   return (
     <Container>
-      <div>
-        <p>Кредитная карта — лучший способ получить кредит до 2 000 000 ₽ с удобными условиями и доставкой.
-          <span>Узнать больше</span>
+      <div style={ { fontSize: '13px', padding: '16px 0', lineHeight: '20px' } }>
+        <p>Кредитная карта — лучший способ получить кредит до 2 000 000 ₽ с удобными условиями и доставкой. <span>Узнать больше</span>
         </p>
 
         <p>
@@ -21,7 +20,6 @@ export const CreditCards: React.FC = () => {
             от&nbsp;590&nbsp;₽. Бесплатное пополнение банковским переводом или у&nbsp;партнеров Тинькофф Банка.</span>
         </p>
       </div>
-
       <CardTemplate/>
     </Container>
   );

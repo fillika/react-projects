@@ -8,11 +8,12 @@ export const CardTemplate: React.FC = () => {
   const classes = useStyles();
 
   return (
-    <div className={ clsx(classes.wrapper, classes.mainProduct, classes.wrapperHover) }>
+    <div className={ clsx(classes.wrapper, classes.grayBg, classes.wrapperHover) }>
       <div className={ classes.imageWrapper }>
         <span>
           <span className={ classes.description }>Наша лучшая кредитная карта</span>
         </span>
+
         <picture>
           <source
             srcSet='https://acdn.tinkoff.ru/static/pages/files/0c9ab3d5-8e35-4223-a8fe-16c4c981b352.webp 1x, https://acdn.tinkoff.ru/static/pages/files/bf1ca0d5-b9ee-47cd-bb7d-0e236ba55721.webp 2x'
@@ -30,36 +31,41 @@ export const CardTemplate: React.FC = () => {
         </picture>
       </div>
 
-      <div>
-        <div>
-          <Typography variant='h4'>Кредитная карта Тинькофф Платинум</Typography>
+      <div className={ classes.textWrapper }>
+        <div className={ classes.textInnerWrapper }>
+          <div className={ classes.titlesWrapper }>
+            <Typography className={ classes.title } variant='h1'>Кредитная карта Тинькофф Платинум</Typography>
 
-          <Typography>Наша лучшая кредитная карта. Подходит для повседневных трат и&nbsp;покупок в&nbsp;рассрочку. Одобрим&nbsp;за&nbsp;2&nbsp;минуты, доставим бесплатно</Typography>
-        </div>
-
-        <div>
-          <div>
-            <p>До 700 000 ₽</p>
-            <p>Кредитный лимит</p>
+            <Typography
+              className={ classes.about }>Наша лучшая кредитная карта. Подходит для повседневных трат и&nbsp;покупок в&nbsp;рассрочку. Одобрим&nbsp;за&nbsp;2&nbsp;минуты, доставим бесплатно</Typography>
           </div>
-          <div>
-            <p>0% до 12 мес.</p>
-            <p>Рассрочка у партнеров</p>
-          </div>
-          <div>
-            <p>590 ₽ в год</p>
-            <p>Стоимость обслуживания</p>
-          </div>
-        </div>
 
-        <div>
-          <Button variant='contained' color='primary'>
-            <Link to='/cards/credit-cards/tinkoff-platinum/#form'>Оформить карту</Link>
-          </Button>
+          <div style={ { display: 'flex' } }>
+            <div style={ { width: '33.33%' } }>
+              <h6>До 700 000 ₽</h6>
+              <p className={ classes.smallSubtitle }>Кредитный лимит</p>
+            </div>
 
-          <Button variant='outlined'>
-            <Link to='/cards/credit-cards/tinkoff-platinum/'>Подробнее о карте</Link>
-          </Button>
+            <div style={ { width: '33.33%' } }>
+              <h6>0% до 12 мес.</h6>
+              <p className={ classes.smallSubtitle }>Рассрочка у партнеров</p>
+            </div>
+
+            <div style={ { width: '33.33%' } }>
+              <h6>590 ₽ в год</h6>
+              <p className={ classes.smallSubtitle }>Стоимость обслуживания</p>
+            </div>
+          </div>
+
+          <div style={ { marginTop: 'auto', paddingTop: '24px' } }>
+            <Button variant='contained' color='primary'>
+              <Link to='/cards/credit-cards/tinkoff-platinum/#form'>Оформить карту</Link>
+            </Button>
+
+            <Button variant='outlined'>
+              <Link to='/cards/credit-cards/tinkoff-platinum/'>Подробнее о карте</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </div>
