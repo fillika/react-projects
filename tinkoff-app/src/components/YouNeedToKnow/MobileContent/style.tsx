@@ -34,6 +34,7 @@ export const useStyles = makeStyles(({ palette, spacing }) => createStyles({
     minHeight: 30
   },
   cardLink: {
+    color: '#333',
     fontSize: 13,
     '&:visited': {
       color: '#333',

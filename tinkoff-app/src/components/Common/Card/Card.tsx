@@ -45,7 +45,7 @@ export const Card: React.FC<TCard> = props => {
 
         <Grid item className={ classes.textWrapper }>
           <Title classes={ classes } title={ title }/>
-          <Typography className={ classes.subtitle }>{ subTitle }</Typography>
+          <Typography dangerouslySetInnerHTML={ { __html: subTitle } } className={ classes.subtitle }/>
         </Grid>
 
         <Grid style={ { marginTop: 'auto' } } item>

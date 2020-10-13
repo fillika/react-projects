@@ -48,7 +48,8 @@ export const useStyle = makeStyles(({ spacing }) => createStyles({
   svg: {
     color: 'rgba(0,0,0,.4)',
     transition: '300ms linear',
-    transform: 'rotate(0)'
+    transform: 'rotate(0)',
+    cursor: 'pointer'
   },
   svgActive: {
     transform: 'rotate(180deg)'
