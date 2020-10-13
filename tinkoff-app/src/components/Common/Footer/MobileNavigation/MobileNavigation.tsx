@@ -8,11 +8,11 @@ import { MenuList } from "./MenuList";
 export const MobileNavigation: React.FC = () => {
   const classes = useStyle();
 
-  const renderTinkoffMenu = tinkoffLinksMenuLinks.map((data, idx) => <MenuList { ...data } key={ idx }/>);
-  const renderListItems = navigationsLinks.map((data, idx) => <MenuList { ...data } key={ idx }/>);
+  const renderTinkoffMenu = tinkoffLinksMenuLinks.map(data => <MenuList { ...data } key={ data.id }/>);
+  const renderListItems = navigationsLinks.map(data => <MenuList { ...data } key={ data.id }/>);
 
   return (
-    <div className={classes.wrapper}>
+    <div className={ classes.wrapper }>
       <Container>
         <ul className={ classes.menu }>
           { renderTinkoffMenu }

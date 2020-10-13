@@ -25,7 +25,8 @@ export const useStyle = makeStyles(({ spacing }) => createStyles({
     }
   },
   subMenu: {
-    marginLeft: spacing()
+    marginLeft: spacing(),
+    paddingBottom: spacing(2)
   },
   subMenuLink: {
     paddingTop: spacing() - 5,

@@ -7,12 +7,12 @@ import { useMediaQuery, useTheme } from "@material-ui/core";
 
 export const Footer: React.FC = () => {
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down('lg'));
+  const matches = useMediaQuery(theme.breakpoints.up('lg'));
 
   return (
     <>
       <FirstRow/>
-      { matches && <MobileNavigation/> }
+      { !matches && <MobileNavigation/> }
       <FooterNavigation/>
     </>
   );
