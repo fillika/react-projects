@@ -1,10 +1,12 @@
 import React from "react";
-import { Button, Typography } from "@material-ui/core";
+import { Button, Typography, useTheme } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { useStyles } from "./style";
 import clsx from "clsx";
 
 export const CardTemplate: React.FC = () => {
+  const theme = useTheme();
+  console.log(theme.palette);
   const classes = useStyles();
 
   return (
@@ -62,7 +64,7 @@ export const CardTemplate: React.FC = () => {
               <Link to='/cards/credit-cards/tinkoff-platinum/#form'>Оформить карту</Link>
             </Button>
 
-            <Button variant='outlined'>
+            <Button variant='text'>
               <Link to='/cards/credit-cards/tinkoff-platinum/'>Подробнее о карте</Link>
             </Button>
           </div>

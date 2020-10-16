@@ -21,6 +21,7 @@ export const theme = createMuiTheme({
   palette: {
     primary: {
       main: '#ffdd2d',
+      dark: 'rgb(252 197 33)'
     },
     secondary: {
       main: '#f5f5f6',
@@ -29,13 +30,13 @@ export const theme = createMuiTheme({
       500: '#f5f5f6',
     },
     text: {
-      primary: variables.color.gray,
+      primary: '#fff',
       secondary: 'rgba(0,0,0,.8)',
     },
   },
   typography: {
     fontFamily:
-            '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol',
+      '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol',
     body1: {
       fontSize: '0.75rem',
     },

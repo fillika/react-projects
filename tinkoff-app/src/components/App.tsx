@@ -5,7 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 
-import { Header } from './Header';
+import { Header } from './Common/Header';
 import { MainPage } from "./pages/MainPage";
 import { Footer } from "./Common/Footer";
 import { CreditCards } from "./pages/Cards/CreditCards";

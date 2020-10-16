@@ -7,7 +7,7 @@ import { useStyle } from './style';
 
 import { SecondLevelHeader } from '../SecondLevelHeader';
 
-import logoRus from '../../../images/logo_rus.svg';
+import logoRus from '../../../../images/logo_rus.svg';
 
 export const FirstLevelHeader: React.FC = () => {
   const classes = useStyle();

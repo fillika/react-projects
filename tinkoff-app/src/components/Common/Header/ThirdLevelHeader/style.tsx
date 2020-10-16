@@ -44,7 +44,7 @@ export const useStyles = makeStyles(theme =>
       },
 
       '&.active': {
-        color: theme.palette.text.primary,
+        color: '#333',
 
         '&::before': {
           content: '""',
