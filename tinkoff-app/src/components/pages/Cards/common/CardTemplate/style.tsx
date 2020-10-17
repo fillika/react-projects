@@ -11,14 +11,14 @@ export const useStyles = makeStyles(({ spacing, breakpoints, transitions, palett
     wrapper: {
       display: 'flex',
       position: 'relative',
+      color: '#fff',
       flexDirection: 'column',
       [breakpoints.up('lg')]: {
         flexDirection: 'row',
       }
     },
-    grayBg: {
+    mainGrayBg: {
       background: 'linear-gradient(248deg, #54595f, #71787e)',
-      color: '#fff',
       '& h1, h2, h3, h4, h5, h6': {
         color: '#fff'
       },
@@ -27,9 +27,21 @@ export const useStyles = makeStyles(({ spacing, breakpoints, transitions, palett
         background: 'linear-gradient(90deg, #4d5869, #707c92)',
       }
     },
+    secondGrayBg: {
+      background: palette.secondary.main,
+      color: 'rgba(0,0,0,.8)',
+
+      '& h1, h2, h3, h4, h5, h6': {
+        color: 'rgba(0,0,0,.8)'
+      },
+
+      [breakpoints.up('lg')]: {
+        background: '#fff',
+        border: '1px solid #e6e6e6'
+      }
+    },
     darkBg: {
       background: 'linear-gradient(90deg, #6D6D6D, #373737)',
-      color: '#fff'
     },
     wrapperHover: {
       transition: 'transform .3s, box-shadow .3s',
@@ -90,7 +102,6 @@ export const useStyles = makeStyles(({ spacing, breakpoints, transitions, palett
       opacity: 0.6
     },
     description: {
-      backgroundColor: 'hsla(0,0%,100%,.64)',
       fontSize: 13,
       paddingLeft: spacing(),
       paddingRight: spacing(),
@@ -104,7 +115,16 @@ export const useStyles = makeStyles(({ spacing, breakpoints, transitions, palett
         marginLeft: spacing(4),
       }
     },
-    learnMoreButton: {
+    descriptionMain: {
+      backgroundColor: 'hsla(0,0%,100%,.64)',
+    },
+    descriptionSecond: {
+      backgroundColor: '#fff',
+      [breakpoints.up('lg')]: {
+        backgroundColor: '#ecf1f7',
+      }
+    },
+    learnMoreButtonMain: {
       fontWeight: 400,
 
       [breakpoints.down(1154)]: {
@@ -112,9 +132,24 @@ export const useStyles = makeStyles(({ spacing, breakpoints, transitions, palett
         backgroundColor: 'rgba(51, 51, 51, 0.36)',
       }
     },
-    formToCard: {
+    learnMoreButtonSecond: {
       fontWeight: 400,
-      marginRight: '8px',
+      color: '#1771e6',
+
+      '&:hover': {
+        borderColor: '#ecf1f7',
+        backgroundColor: '#ecf1f7'
+      },
+
+      [breakpoints.down(1154)]: {
+        ...buttonsCommonsStyles,
+        border: '1px solid #333',
+        color: '#333'
+      }
+    },
+    formToCardButton: {
+      fontWeight: 400,
+      marginRight: '16px',
 
       [breakpoints.down(1154)]: {
         ...buttonsCommonsStyles,
