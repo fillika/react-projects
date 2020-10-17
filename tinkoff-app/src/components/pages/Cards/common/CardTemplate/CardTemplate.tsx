@@ -1,21 +1,35 @@
 import React from "react";
-import { Button, Typography, useTheme } from "@material-ui/core";
+import { Button, Typography, useMediaQuery, useTheme } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { useStyles } from "./style";
 import clsx from "clsx";
 
 export const CardTemplate: React.FC = () => {
-  const theme = useTheme();
-  console.log(theme.palette);
+  const { breakpoints } = useTheme();
   const classes = useStyles();
+  const matches = useMediaQuery(breakpoints.up('lg'));
 
   return (
     <div className={ clsx(classes.wrapper, classes.grayBg, classes.wrapperHover) }>
-      <div className={ classes.imageWrapper }>
-        <span>
-          <span className={ classes.description }>Наша лучшая кредитная карта</span>
-        </span>
+      <span style={ { position: 'absolute', top: 0, lineHeight: 0, } }>
+        <span className={ classes.description }>Наша лучшая кредитная карта</span>
+      </span>
 
+      {
+        matches
+          ? <Desktop/>
+          : <Mobile/>
+      }
+    </div>
+  );
+};
+
+const Desktop: React.FC = () => {
+  const classes = useStyles();
+
+  return (
+    <>
+      <div className={ classes.imageWrapper }>
         <picture>
           <source
             srcSet='https://acdn.tinkoff.ru/static/pages/files/0c9ab3d5-8e35-4223-a8fe-16c4c981b352.webp 1x, https://acdn.tinkoff.ru/static/pages/files/bf1ca0d5-b9ee-47cd-bb7d-0e236ba55721.webp 2x'
@@ -44,32 +58,74 @@ export const CardTemplate: React.FC = () => {
 
           <div style={ { display: 'flex' } }>
             <div style={ { width: '33.33%' } }>
-              <h6>До 700 000 ₽</h6>
+              <h6 className={classes.h6}>До 700 000 ₽</h6>
               <p className={ classes.smallSubtitle }>Кредитный лимит</p>
             </div>
 
             <div style={ { width: '33.33%' } }>
-              <h6>0% до 12 мес.</h6>
+              <h6 className={classes.h6}>0% до 12 мес.</h6>
               <p className={ classes.smallSubtitle }>Рассрочка у партнеров</p>
             </div>
 
             <div style={ { width: '33.33%' } }>
-              <h6>590 ₽ в год</h6>
+              <h6 className={classes.h6}>590 ₽ в год</h6>
               <p className={ classes.smallSubtitle }>Стоимость обслуживания</p>
             </div>
           </div>
 
           <div style={ { marginTop: 'auto', paddingTop: '24px' } }>
-            <Button variant='contained' color='primary'>
+            <Button className={ classes.formToCard } variant='contained' color='primary'>
               <Link to='/cards/credit-cards/tinkoff-platinum/#form'>Оформить карту</Link>
             </Button>
 
-            <Button variant='text'>
+            <Button className={ classes.learnMoreButton } variant='text'>
               <Link to='/cards/credit-cards/tinkoff-platinum/'>Подробнее о карте</Link>
             </Button>
           </div>
         </div>
       </div>
-    </div>
+    </>
+  );
+};
+
+const Mobile: React.FC = () => {
+  const classes = useStyles();
+
+  return (
+    <>
+      <div style={ { padding: '40px 24px 24px' } }>
+        <Typography className={ classes.title } variant='h1'>Кредитная карта Тинькофф&nbsp;Платинум</Typography>
+        <Typography className={ classes.about }>Подходит для повседневных трат и покупок в рассрочку</Typography>
+
+        <ul className={classes.mobileList}>
+          <li><strong>До&nbsp;700&nbsp;000&nbsp;₽</strong>&nbsp;&mdash; кредитный лимит</li>
+          <li><strong>0%&nbsp;рассрочка</strong> до&nbsp;года у&nbsp;партнеров</li>
+          <li><strong>590&nbsp;₽ в&nbsp;год</strong> за&nbsp;обслуживание карты</li>
+        </ul>
+
+        <div style={ { marginTop: 'auto', paddingTop: '24px' } }>
+          <Button className={ classes.formToCard } variant='contained' color='primary'>
+            <Link to='/cards/credit-cards/tinkoff-platinum/#form'>Оформить карту</Link>
+          </Button>
+
+          <Button
+            className={ classes.learnMoreButton } variant='text'>
+            <Link to='/cards/credit-cards/tinkoff-platinum/'>Подробнее</Link>
+          </Button>
+        </div>
+      </div>
+
+      <div style={ { paddingLeft: '24px', lineHeight: 0, paddingRight: '24px' } }>
+        <picture>
+          <source
+            srcSet='https://acdn.tinkoff.ru/static/pages/files/47444801-cde9-4361-a492-5eee734aaeb6.webp 1x, https://acdn.tinkoff.ru/static/pages/files/5b55d07c-d3d4-4cd8-95f6-f842dba4bb2c.webp 2x'
+            type='image/webp'/>
+          <img
+            loading='lazy' src='https://acdn.tinkoff.ru/static/pages/files/ab43fcbc-2591-4638-bba5-fed6882cadcb.png'
+            srcSet='https://acdn.tinkoff.ru/static/pages/files/c79b810f-ba04-4011-8896-24bf0a41b9d6.png 2x'
+            alt='Кредитная карта'/>
+        </picture>
+      </div>
+    </>
   );
 };

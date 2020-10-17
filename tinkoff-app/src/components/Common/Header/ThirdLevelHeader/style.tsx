@@ -36,7 +36,7 @@ export const useStyles = makeStyles(theme =>
 
       [theme.breakpoints.up('lg')]: {
         height: theme.spacing(7),
-        fontSize: '0.7em',
+        fontSize: '0.65em',
       },
 
       '&:visited': {

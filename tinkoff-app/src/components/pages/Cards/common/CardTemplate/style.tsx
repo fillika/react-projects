@@ -1,21 +1,31 @@
 import { createStyles, makeStyles } from '@material-ui/core';
 
-export const useStyles = makeStyles(({ spacing, breakpoints, transitions }) =>
+const buttonsCommonsStyles = {
+  padding: '0 8px',
+  minHeight: '30px',
+  fontSize: '13px',
+};
+
+export const useStyles = makeStyles(({ spacing, breakpoints, transitions, palette }) =>
   createStyles({
     wrapper: {
       display: 'flex',
-
+      position: 'relative',
+      flexDirection: 'column',
+      [breakpoints.up('lg')]: {
+        flexDirection: 'row',
+      }
     },
     grayBg: {
-      background: 'linear-gradient(90deg, #4d5869, #707c92)',
+      background: 'linear-gradient(248deg, #54595f, #71787e)',
       color: '#fff',
       '& h1, h2, h3, h4, h5, h6': {
         color: '#fff'
       },
-      '& p': {
-        color: '#fff',
-        opacity: 0.6
-      },
+
+      [breakpoints.up('lg')]: {
+        background: 'linear-gradient(90deg, #4d5869, #707c92)',
+      }
     },
     darkBg: {
       background: 'linear-gradient(90deg, #6D6D6D, #373737)',
@@ -31,6 +41,7 @@ export const useStyles = makeStyles(({ spacing, breakpoints, transitions }) =>
     },
     imageWrapper: {
       lineHeight: 0,
+      paddingTop: 48,
       minHeight: 252,
       [breakpoints.up(1360)]: {
         minHeight: 296
@@ -54,14 +65,29 @@ export const useStyles = makeStyles(({ spacing, breakpoints, transitions }) =>
       paddingBottom: spacing(2),
     },
     title: {
-      fontSize: 24,
-      paddingBottom: spacing()
+      fontSize: 17,
+      lineHeight: 1.45,
+      marginBottom: 8,
+
+      [breakpoints.up('lg')]: {
+        fontSize: 24,
+        paddingBottom: spacing(),
+      }
     },
     about: {
-      fontSize: 15
+      fontSize: 15,
+      paddingBottom: 8,
+      [breakpoints.up('lg')]: {
+        opacity: 0.6
+      }
+    },
+    h6: {
+      fontSize: 15,
     },
     smallSubtitle: {
-      fontSize: 13
+      fontSize: 15,
+      color: '#fff',
+      opacity: 0.6
     },
     description: {
       backgroundColor: 'hsla(0,0%,100%,.64)',
@@ -71,9 +97,51 @@ export const useStyles = makeStyles(({ spacing, breakpoints, transitions }) =>
       color: '#333',
       lineHeight: '20px',
       height: spacing(3),
-      marginLeft: spacing(4),
+      marginLeft: spacing(3),
       marginBottom: spacing(3),
-      display: 'inline-block'
+      display: 'inline-block',
+      [breakpoints.up('lg')]: {
+        marginLeft: spacing(4),
+      }
+    },
+    learnMoreButton: {
+      fontWeight: 400,
+
+      [breakpoints.down(1154)]: {
+        ...buttonsCommonsStyles,
+        backgroundColor: 'rgba(51, 51, 51, 0.36)',
+      }
+    },
+    formToCard: {
+      fontWeight: 400,
+      marginRight: '8px',
+
+      [breakpoints.down(1154)]: {
+        ...buttonsCommonsStyles,
+        boxShadow: 'none'
+      }
+    },
+    mobileList: {
+      paddingLeft: 4,
+      marginLeft: 6,
+
+      '& li': {
+        fontSize: 15,
+        position: 'relative',
+        lineHeight: 1.5,
+
+        '&:before': {
+          content: '""',
+          position: 'absolute',
+          width: 4,
+          height: 4,
+          borderRadius: '50%',
+          display: 'block',
+          backgroundColor: palette.primary.main,
+          left: -10,
+          top: 8
+        }
+      }
     },
     showCard: {
       opacity: 0,
