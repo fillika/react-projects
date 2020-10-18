@@ -13,6 +13,7 @@ export const useStyles = makeStyles(({ spacing, breakpoints, transitions, palett
       position: 'relative',
       color: '#fff',
       flexDirection: 'column',
+      cursor: 'pointer',
       [breakpoints.up('lg')]: {
         flexDirection: 'row',
       }
@@ -35,10 +36,16 @@ export const useStyles = makeStyles(({ spacing, breakpoints, transitions, palett
         color: 'rgba(0,0,0,.8)'
       },
 
+
       [breakpoints.up('lg')]: {
         background: '#fff',
         border: '1px solid #e6e6e6'
       }
+    },
+    colorHoverCardTitle: {
+      '&:hover h1, h2': {
+        color: '#1771e6'
+      },
     },
     darkBg: {
       background: 'linear-gradient(90deg, #6D6D6D, #373737)',
@@ -96,9 +103,14 @@ export const useStyles = makeStyles(({ spacing, breakpoints, transitions, palett
     h6: {
       fontSize: 15,
     },
-    smallSubtitle: {
+    smallSubtitleMain: {
       fontSize: 15,
       color: '#fff',
+      opacity: 0.6
+    },
+    smallSubtitleSecond: {
+      fontSize: 15,
+      color: 'rgba(0,0,0,.8)',
       opacity: 0.6
     },
     description: {

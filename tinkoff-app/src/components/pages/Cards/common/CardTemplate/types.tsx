@@ -4,6 +4,7 @@ export type TCardtemplate = {
 
 export interface IData extends TCardtemplate {
   cardTitle: string;
+  cardLink: string;
   desktop: IDesktop;
   mobile: IMobile;
 }

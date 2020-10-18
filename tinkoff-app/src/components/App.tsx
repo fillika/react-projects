@@ -12,7 +12,7 @@ import { CreditCards } from "./pages/Cards/CreditCards";
 
 export const App: React.FC = () => {
   return (
-    <div>
+    <div style={ { display: 'flex', flexDirection: 'column', minHeight: '100vh' } }>
       <Header/>
 
       <main>
@@ -27,7 +27,7 @@ export const App: React.FC = () => {
         </Switch>
       </main>
 
-      <footer>
+      <footer style={ { marginTop: 'auto' } }>
         <Footer/>
       </footer>
     </div>

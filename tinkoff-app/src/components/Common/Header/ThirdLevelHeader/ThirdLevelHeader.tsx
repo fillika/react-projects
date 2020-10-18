@@ -54,7 +54,7 @@ export const ThirdLevelHeader: React.FC = () => {
 
   const createListItem = thirdLevelLinks.map(({ id, name, address }) => (
     <ListItem className={classes.listItem} key={id}>
-      <NavLink exact className={classes.navLink} to={address}>
+      <NavLink className={classes.navLink} to={address}>
         <span>{name}</span>
       </NavLink>
     </ListItem>
