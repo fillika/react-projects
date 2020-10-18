@@ -8,7 +8,6 @@ import { Information } from "../Information";
 import { Award } from "../Award";
 import { Basement } from "../Basement";
 import { Route, Switch } from "react-router-dom";
-import { MainPage } from "../../../pages/MainPage";
 
 export const FooterNavigation: React.FC = () => {
   const classes = useStyle();

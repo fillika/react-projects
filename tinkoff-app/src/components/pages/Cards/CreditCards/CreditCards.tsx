@@ -1,9 +1,22 @@
-import React from "react";
-import { Container } from "@material-ui/core";
+import React, { useState } from "react";
+import { Button, Container } from "@material-ui/core";
 import { CardTemplate } from "../common/CardTemplate";
 import { IData } from "../common/CardTemplate/types";
 
 export const CreditCards: React.FC = () => {
+  const [showOther, setShowOther] = useState(false);
+
+  /**
+   * Функция принимает массив данных, который потом будем рендерить
+   * в зависимости от переменной
+   * @param data
+   */
+  function renderOtherCards(data: IData[]) {
+    return data.map((obj, idx) => {
+      return <CardTemplate key={ idx + idx++ } { ...obj }/>;
+    });
+  }
+
   return (
     <Container>
       <div style={ { fontSize: '13px', padding: '16px 0', lineHeight: '20px' } }>
@@ -22,13 +35,26 @@ export const CreditCards: React.FC = () => {
         </p>
       </div>
 
-      <CardTemplate desktop={ mainCard.desktop } mobile={ mainCard.mobile } isMain={ true }/>
-      <CardTemplate desktop={ mainCard.desktop } mobile={ mainCard.mobile } isMain={ false }/>
+      <CardTemplate { ...mainCard }/>
+
+      {
+        showOther
+          ? renderOtherCards(secondCard)
+          :
+          <div style={ { textAlign: 'center' } }>
+            <Button
+              style={ { color: '#1771e6', border: '1px solid #1771e6', fontWeight: 400 } }
+              onClick={ () => setShowOther(true) }>Показать остальные карты</Button>
+          </div>
+      }
+
     </Container>
   );
 };
 
 const mainCard: IData = {
+  isMain: true,
+  cardTitle: 'Наша лучшая кредитная карта',
   desktop: {
     img: {
       alt: 'Кредитная карта',
@@ -87,3 +113,21 @@ const mainCard: IData = {
     },
   }
 };
+
+const secondCard: IData[] = [
+  {
+    ...mainCard,
+    cardTitle: 'Еще одна кредитная карта',
+    isMain: false,
+  },
+  {
+    ...mainCard,
+    cardTitle: 'Определеннно то, что Вам нужно',
+    isMain: false,
+  },
+  {
+    ...mainCard,
+    cardTitle: 'What the fuck it this?',
+    isMain: false,
+  },
+];

@@ -127,6 +127,10 @@ export const useStyles = makeStyles(({ spacing, breakpoints, transitions, palett
     learnMoreButtonMain: {
       fontWeight: 400,
 
+      '& a:visited, a': {
+        color: '#fff'
+      },
+
       [breakpoints.down(1154)]: {
         ...buttonsCommonsStyles,
         backgroundColor: 'rgba(51, 51, 51, 0.36)',
@@ -134,7 +138,10 @@ export const useStyles = makeStyles(({ spacing, breakpoints, transitions, palett
     },
     learnMoreButtonSecond: {
       fontWeight: 400,
-      color: '#1771e6',
+
+      '& a:visited, a': {
+        color: '#1771e6',
+      },
 
       '&:hover': {
         borderColor: '#ecf1f7',
@@ -144,16 +151,23 @@ export const useStyles = makeStyles(({ spacing, breakpoints, transitions, palett
       [breakpoints.down(1154)]: {
         ...buttonsCommonsStyles,
         border: '1px solid #333',
-        color: '#333'
+
+        '& a:visited, a': {
+          color: '#333'
+        },
       }
     },
     formToCardButton: {
       fontWeight: 400,
       marginRight: '16px',
 
+      '& a:visited, a': {
+        color: '#333'
+      },
+
       [breakpoints.down(1154)]: {
         ...buttonsCommonsStyles,
-        boxShadow: 'none'
+        boxShadow: 'none',
       }
     },
     mobileList: {

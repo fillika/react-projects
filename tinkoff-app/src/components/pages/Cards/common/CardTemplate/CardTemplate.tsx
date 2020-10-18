@@ -7,14 +7,14 @@ import { Desktop } from "./Desktop";
 import { Mobile } from "./Mobile";
 
 export const CardTemplate: React.FC<IData> = props => {
-  const { isMain, desktop, mobile } = props;
+  const { isMain, desktop, mobile, cardTitle } = props;
   const classes = useStyles();
   const { breakpoints } = useTheme();
   const matches = useMediaQuery(breakpoints.up('lg'));
 
   const wrapperClasses = isMain
     ? clsx(classes.wrapper, classes.mainGrayBg, classes.wrapperHover)
-    : clsx(classes.wrapper, classes.secondGrayBg);
+    : clsx(classes.wrapper, classes.secondGrayBg, classes.showCard);
 
   const descriptionClasses = isMain
     ? clsx(classes.description, classes.descriptionMain)
@@ -24,7 +24,7 @@ export const CardTemplate: React.FC<IData> = props => {
     <div style={ { padding: '16px 0' } }>
       <div className={ wrapperClasses }>
         <span style={ { position: 'absolute', top: 0, lineHeight: 0, } }>
-          <span className={ descriptionClasses }>Наша лучшая кредитная карта</span>
+          <span className={ descriptionClasses } dangerouslySetInnerHTML={ { __html: cardTitle } }/>
         </span>
 
         {

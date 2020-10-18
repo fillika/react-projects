@@ -10,6 +10,7 @@ export const Mobile: React.FC<IMobile> = ({ isMain, img, about, title, list, for
   const renderedList = list.map((string, idx) => (
     <li key={ idx + string } dangerouslySetInnerHTML={ { __html: string } }/>));
 
+  console.log(isMain);
   return (
     <>
       <div style={ { padding: '40px 24px 24px' } }>
