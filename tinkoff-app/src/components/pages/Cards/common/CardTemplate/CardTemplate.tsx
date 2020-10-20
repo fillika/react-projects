@@ -12,22 +12,28 @@ import { useHistory } from 'react-router-dom';
 
 export const CardTemplate: React.FC<IData> = props => {
   const {
-    wrapper, mainGrayBg, wrapperHover,
+    wrapper, mainCredit, wrapperHover,
     secondGrayBg, colorHoverCardTitle, showCard,
-    description, descriptionMain, descriptionSecond
+    description, descriptionMain, descriptionSecond, mainDebit
   } = useStyles();
   const history = useHistory();
   const { breakpoints } = useTheme();
-  const { isMain, desktop, mobile, cardTitle, cardLink } = props;
+  const { isMain, desktop, mobile, cardTitle, cardLink, cardType } = props;
   const matches = useMediaQuery(breakpoints.up('lg'));
 
-  const wrapperClasses = isMain
-    ? clsx(wrapper, mainGrayBg, wrapperHover)
+  const wrapperCredit = isMain
+    ? clsx(wrapper, mainCredit, wrapperHover)
+    : clsx(wrapper, secondGrayBg, colorHoverCardTitle, showCard);
+
+  const wrapperDebit = isMain
+    ? clsx(wrapper, mainDebit, wrapperHover)
     : clsx(wrapper, secondGrayBg, colorHoverCardTitle, showCard);
 
   const descriptionClasses = isMain
     ? clsx(description, descriptionMain)
     : clsx(description, descriptionSecond);
+
+  const className = cardType === 'debit' ? wrapperDebit : wrapperCredit;
 
   /**
    * Функция создана для того, чтобы перенаправлять на форму заказа по клику
@@ -45,7 +51,7 @@ export const CardTemplate: React.FC<IData> = props => {
 
   return (
     <div style={ { padding: '16px 0' } }>
-      <div onClick={ historyPush } className={ wrapperClasses }>
+      <div onClick={ historyPush } className={ className }>
         <span style={ { position: 'absolute', top: 0, lineHeight: 0, } }>
           <span className={ descriptionClasses } dangerouslySetInnerHTML={ { __html: cardTitle } }/>
         </span>

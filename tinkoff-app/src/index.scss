@@ -15,6 +15,11 @@ body {
   }
 }
 
+::selection {
+  background: #ffdd2d;
+  color: #333;
+}
+
 *,
 html,
 body {

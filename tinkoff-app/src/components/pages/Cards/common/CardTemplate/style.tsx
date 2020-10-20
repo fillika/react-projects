@@ -18,7 +18,7 @@ export const useStyles = makeStyles(({ spacing, breakpoints, transitions, palett
         flexDirection: 'row',
       }
     },
-    mainGrayBg: {
+    mainCredit: {
       background: 'linear-gradient(248deg, #54595f, #71787e)',
       '& h1, h2, h3, h4, h5, h6': {
         color: '#fff'
@@ -26,6 +26,16 @@ export const useStyles = makeStyles(({ spacing, breakpoints, transitions, palett
 
       [breakpoints.up('lg')]: {
         background: 'linear-gradient(90deg, #4d5869, #707c92)',
+      }
+    },
+    mainDebit: {
+      background: 'linear-gradient(0deg, #6D6D6D, #373737)',
+      '& h1, h2, h3, h4, h5, h6': {
+        color: '#fff'
+      },
+
+      [breakpoints.up('lg')]: {
+        background: 'linear-gradient(90deg, #6D6D6D, #373737)',
       }
     },
     secondGrayBg: {
@@ -46,9 +56,6 @@ export const useStyles = makeStyles(({ spacing, breakpoints, transitions, palett
       '&:hover h1, h2': {
         color: '#1771e6'
       },
-    },
-    darkBg: {
-      background: 'linear-gradient(90deg, #6D6D6D, #373737)',
     },
     wrapperHover: {
       transition: 'transform .3s, box-shadow .3s',

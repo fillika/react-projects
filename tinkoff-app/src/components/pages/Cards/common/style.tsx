@@ -2,6 +2,7 @@ import { createStyles, makeStyles } from "@material-ui/core";
 
 export const useStyles = makeStyles(({ spacing, breakpoints, transitions, palette }) =>
   createStyles({
+    textWrapper: { fontSize: '13px', padding: '16px 0', lineHeight: '20px' },
     hideTitle: {
       overflow: 'hidden',
       animation: `$hideTitle 350ms linear forwards`,

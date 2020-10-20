@@ -24,7 +24,7 @@ const secondLevelLinks: TLevelLinks = [
   },
   {
     id: 3,
-    name: 'Инвестиии',
+    name: 'Инвестиции',
     address: '/invest/',
   },
   {

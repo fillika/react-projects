@@ -3,6 +3,7 @@ export type TCardtemplate = {
 }
 
 export interface IData extends TCardtemplate {
+  cardType?: 'debit' | 'credit';
   cardTitle: string;
   cardLink: string;
   desktop: IDesktop;

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Button, Container } from "@material-ui/core";
 import { CardTemplate } from "../common/CardTemplate";
-import { IData } from "../common/CardTemplate/types";
 import { mainCard, secondCard } from "./data";
-import { useStyles } from "./style";
+import { useStyles } from "../common/style";
 import clsx from "clsx";
+import renderOtherCards from "../common/helpers";
 
 export const CreditCards: React.FC = () => {
-  const { description, showDescription, hideTitle, button } = useStyles();
+  const { textWrapper, description, showDescription, hideTitle, button } = useStyles();
   const [showOther, setShowOther] = useState(false);
   const [isShowMore, setShowMore] = useState(false);
 
@@ -17,9 +17,9 @@ export const CreditCards: React.FC = () => {
 
   return (
     <Container>
-      <div style={ { fontSize: '13px', padding: '16px 0', lineHeight: '20px' } }>
-        <p className={ isShowMore ? hideTitle : '' }>
-          Кредитная карта — лучший способ получить кредит до 2&nbsp;000&nbsp;000&nbsp;₽ с удобными условиями и
+      <div className={ textWrapper }>
+        <p style={ { color: "#666" } } className={ isShowMore ? hideTitle : '' }>
+          <strong>Кредитная карта</strong> — лучший способ получить кредит до 2&nbsp;000&nbsp;000&nbsp;₽ с удобными условиями и
           доставкой. <span className={ button } onClick={ () => setShowMore(!isShowMore) }>Узнать больше</span>
         </p>
 
@@ -51,14 +51,3 @@ export const CreditCards: React.FC = () => {
     </Container>
   );
 };
-
-/**
- * Функция принимает массив данных, который потом будем рендерить
- * в зависимости от переменной
- * @param data
- */
-function renderOtherCards(data: IData[]) {
-  return data.map((obj, idx) => {
-    return <CardTemplate key={ idx + idx++ } { ...obj }/>;
-  });
-}
