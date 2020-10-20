@@ -1,19 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Container } from "@material-ui/core";
 import { CardTemplate } from "../common/CardTemplate";
-import { mainCard, secondCard } from "./data";
+import { secondCard } from "./data";
 import { useStyles } from "../common/style";
 import clsx from "clsx";
 import renderOtherCards from "../common/helpers";
+import { IData } from "../common/CardTemplate/types";
 
 export const CreditCards: React.FC = () => {
   const { textWrapper, description, showDescription, hideTitle, button } = useStyles();
   const [showOther, setShowOther] = useState(false);
   const [isShowMore, setShowMore] = useState(false);
+  const [mainCard, setMainCard] = useState<null | IData>(null);
 
   const descriptionClsx = isShowMore
     ? clsx(description, showDescription)
     : description;
+
+  useEffect(() => {
+    const url = 'https://tinkoff-app.firebaseio.com/creditCards/mainCard.json';
+
+    fetch(url)
+      .then(response => response.json())
+      .then(json => setMainCard(json));
+
+  }, []);
 
   return (
     <Container>
@@ -35,7 +46,9 @@ export const CreditCards: React.FC = () => {
         </p>
       </div>
 
-      <CardTemplate { ...mainCard }/>
+      {
+        mainCard !== null && <CardTemplate { ...mainCard }/>
+      }
 
       {
         showOther
