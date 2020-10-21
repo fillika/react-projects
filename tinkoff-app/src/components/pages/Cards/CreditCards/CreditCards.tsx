@@ -5,24 +5,53 @@ import { secondCard } from "./data";
 import { useStyles } from "../common/style";
 import clsx from "clsx";
 import renderOtherCards from "../common/helpers";
-import { IData } from "../common/CardTemplate/types";
+import { useDispatch, useSelector } from "react-redux";
+import { IcardsState } from "../../../../redux/reducer";
+import { checkCookieAndCleanLS, setCookie } from "../../../../helpers";
 
 export const CreditCards: React.FC = () => {
   const { textWrapper, description, showDescription, hideTitle, button } = useStyles();
   const [showOther, setShowOther] = useState(false);
   const [isShowMore, setShowMore] = useState(false);
-  const [mainCard, setMainCard] = useState<null | IData>(null);
+  const url = 'https://tinkoff-app.firebaseio.com/creditCards/mainCard.json';
+
+  /**
+   * There I'll get data from redux store (all cards)
+   * Also used hook for dispatch
+   */
+  const cards = useSelector<IcardsState>(state => state.cards.credit);
+  const dispatch = useDispatch();
 
   const descriptionClsx = isShowMore
     ? clsx(description, showDescription)
     : description;
 
   useEffect(() => {
-    const url = 'https://tinkoff-app.firebaseio.com/creditCards/mainCard.json';
 
-    fetch(url)
-      .then(response => response.json())
-      .then(json => setMainCard(json));
+    // @ts-ignore
+    if (cards.mainCard === null) {
+      checkCookieAndCleanLS('mainCard');
+
+      const mainCard = localStorage.getItem('mainCard');
+
+      if (!mainCard) {
+        /**
+         * If I go to website first (localStorage has nothing)
+         * I'll fetch data, create localStorage and setCookie
+         */
+
+        fetch(url)
+          .then(response => response.json())
+          .then(json => {
+            dispatch({ type: 'GET_MAIN_CC_CARD', payload: json });
+            localStorage.setItem('mainCard', JSON.stringify(json));
+            setCookie('reactUser', 'session', { 'max-age': 14400 });
+          });
+
+      } else {
+        dispatch({ type: 'GET_MAIN_CC_CARD', payload: JSON.parse(mainCard) });
+      }
+    }
 
   }, []);
 
@@ -47,7 +76,8 @@ export const CreditCards: React.FC = () => {
       </div>
 
       {
-        mainCard !== null && <CardTemplate { ...mainCard }/>
+        // @ts-ignore
+        cards.mainCard !== null && <CardTemplate { ...cards.mainCard }/>
       }
 
       {
