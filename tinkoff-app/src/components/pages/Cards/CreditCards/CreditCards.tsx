@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Button, Container } from "@material-ui/core";
 import { CardTemplate } from "../common/CardTemplate";
 import { secondCard } from "./data";
@@ -11,25 +11,22 @@ import { checkCookieAndCleanLS, setCookie } from "../../../../helpers";
 
 export const CreditCards: React.FC = () => {
   const { textWrapper, description, showDescription, hideTitle, button } = useStyles();
-  const [showOther, setShowOther] = useState(false);
-  const [isShowMore, setShowMore] = useState(false);
   const url = 'https://tinkoff-app.firebaseio.com/creditCards/mainCard.json';
 
   /**
    * There I'll get data from redux store (all cards)
-   * Also used hook for dispatch
+   * Also use hook for dispatch
    */
-  const cards = useSelector<IcardsState>(state => state.cards.credit);
+  const { cards: { credit } } = useSelector((state: IcardsState) => state);
   const dispatch = useDispatch();
 
-  const descriptionClsx = isShowMore
+  const descriptionClsx = credit.showMoreInfo
     ? clsx(description, showDescription)
     : description;
 
   useEffect(() => {
 
-    // @ts-ignore
-    if (cards.mainCard === null) {
+    if (credit.mainCard === null) {
       checkCookieAndCleanLS('mainCard');
 
       const mainCard = localStorage.getItem('mainCard');
@@ -39,7 +36,6 @@ export const CreditCards: React.FC = () => {
          * If I go to website first (localStorage has nothing)
          * I'll fetch data, create localStorage and setCookie
          */
-
         fetch(url)
           .then(response => response.json())
           .then(json => {
@@ -58,9 +54,10 @@ export const CreditCards: React.FC = () => {
   return (
     <Container>
       <div className={ textWrapper }>
-        <p style={ { color: "#666" } } className={ isShowMore ? hideTitle : '' }>
+        <p style={ { color: "#666" } } className={ credit.showMoreInfo ? hideTitle : '' }>
           <strong>Кредитная карта</strong> — лучший способ получить кредит до 2&nbsp;000&nbsp;000&nbsp;₽ с удобными условиями и
-          доставкой. <span className={ button } onClick={ () => setShowMore(!isShowMore) }>Узнать больше</span>
+          доставкой. <span
+          className={ button } onClick={ () => dispatch({ type: 'SHOW_MORE_ABOUT_CC' }) }>Узнать больше</span>
         </p>
 
         <p className={ descriptionClsx }>
@@ -76,18 +73,17 @@ export const CreditCards: React.FC = () => {
       </div>
 
       {
-        // @ts-ignore
-        cards.mainCard !== null && <CardTemplate { ...cards.mainCard }/>
+        credit.mainCard !== null && <CardTemplate { ...credit.mainCard }/>
       }
 
       {
-        showOther
+        credit.showOther
           ? renderOtherCards(secondCard)
           :
           <div style={ { textAlign: 'center' } }>
             <Button
               style={ { color: '#1771e6', border: '1px solid #1771e6', fontWeight: 400 } }
-              onClick={ () => setShowOther(true) }>Показать остальные карты</Button>
+              onClick={ () => dispatch({ type: 'SHOW_OTHER_CC_CARDS' }) }>Показать остальные карты</Button>
           </div>
       }
 
