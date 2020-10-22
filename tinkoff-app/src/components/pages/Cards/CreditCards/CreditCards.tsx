@@ -14,7 +14,7 @@ export const CreditCards: React.FC = () => {
    * There I'll get data from redux store (all cards)
    * Also use hook for dispatch
    */
-  const { cards: { credit } } = useSelector((state: IcardsState) => state);
+  const { mainCard, showOther } = useSelector((state: IcardsState) => state.cards.credit);
   const dispatch = useDispatch();
 
   function getFetch(): void {
@@ -30,28 +30,28 @@ export const CreditCards: React.FC = () => {
   }
 
   useEffect(() => {
-    if (credit.mainCard === null) {
+    if (mainCard === null) {
       checkCookieAndCleanLS('mainCard');
 
-      const mainCard = localStorage.getItem('mainCard');
+      const cardDataFromLS = localStorage.getItem('mainCard');
 
       /**
        * If I go to website first (localStorage has nothing)
        * I'll fetch data, create localStorage and setCookie
        */
-      !mainCard
+      !cardDataFromLS
         ? getFetch()
-        : dispatch({ type: 'GET_MAIN_CC_CARD', payload: JSON.parse(mainCard) });
+        : dispatch({ type: 'GET_MAIN_CC_CARD', payload: JSON.parse(cardDataFromLS) });
     }
-  }, []);
+  });
 
   return (
     <Container>
       <About/>
 
-      { credit.mainCard && <CardTemplate { ...credit.mainCard }/> }
+      { mainCard && <CardTemplate { ...mainCard }/> }
 
-      { credit.showOther ? renderOtherCards(secondCard) : <MoreButton/> }
+      { showOther ? renderOtherCards(secondCard) : <MoreButton/> }
 
     </Container>
   );

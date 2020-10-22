@@ -11,16 +11,16 @@ export const About: React.FC = () => {
    * There I'll get data from redux store (all cards)
    * Also use hook for dispatch
    */
-  const { cards: { credit } } = useSelector((state: IcardsState) => state);
+  const { showMoreInfo } = useSelector((state: IcardsState) => state.cards.credit);
   const dispatch = useDispatch();
 
-  const descriptionClsx = credit.showMoreInfo
+  const descriptionClsx = showMoreInfo
     ? clsx(description, showDescription)
     : description;
 
   return (
     <div className={ textWrapper }>
-      <p style={ { color: "#666" } } className={ credit.showMoreInfo ? hideTitle : '' }>
+      <p style={ { color: "#666" } } className={ showMoreInfo ? hideTitle : '' }>
         <strong>Кредитная карта</strong> — лучший способ получить кредит до 2&nbsp;000&nbsp;000&nbsp;₽ с удобными условиями и
         доставкой. <span
         className={ button } onClick={ () => dispatch({ type: 'SHOW_MORE_ABOUT_CC' }) }>Узнать больше</span>
