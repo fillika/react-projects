@@ -10,6 +10,7 @@ import { MainPage } from "./pages/MainPage";
 import { Footer } from "./Common/Footer";
 import { CreditCards } from "./pages/Cards/CreditCards";
 import { DebitCards } from "./pages/Cards/DebitCards";
+import { Deposit } from "./pages/deposit";
 
 export const App: React.FC = () => {
   return (
@@ -28,6 +29,10 @@ export const App: React.FC = () => {
 
           <Route exact path='/cards/debit-cards/'>
             <DebitCards/>
+          </Route>
+
+          <Route path='/deposit/'>
+            <Deposit/>
           </Route>
         </Switch>
       </main>

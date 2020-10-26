@@ -16,6 +16,7 @@ export const CardTemplate: React.FC<IData> = props => {
     secondGrayBg, colorHoverCardTitle, showCard,
     description, descriptionMain, descriptionSecond, mainDebit
   } = useStyles();
+
   const history = useHistory();
   const { breakpoints } = useTheme();
   const { isMain, desktop, mobile, cardTitle, cardLink, cardType } = props;
