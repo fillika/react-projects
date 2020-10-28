@@ -11,16 +11,18 @@ import './index.scss';
 
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-
+import { StylesProvider } from '@material-ui/styles';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={ store }>
-      <ThemeProvider theme={ theme }>
-        <Router>
-          <App/>
-        </Router>
-      </ThemeProvider>
+      <StylesProvider injectFirst>
+        <ThemeProvider theme={ theme }>
+          <Router>
+            <App/>
+          </Router>
+        </ThemeProvider>
+      </StylesProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

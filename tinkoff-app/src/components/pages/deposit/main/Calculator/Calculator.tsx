@@ -1,11 +1,9 @@
 import React, { ChangeEvent, FC, FormEvent, useState } from "react";
 import { Container, Typography } from "@material-ui/core";
-import { useStyles } from "./style";
 import { InputWithSlider } from "./InputWithSlider";
 import { InputProps } from "./types";
 
 export const Calculator: FC = () => {
-  const classes = useStyles();
   const [sum, setSum] = useState<number | number[] | string>(50000);
   const [month, setMonth] = useState<number | number[] | string>(3);
 
