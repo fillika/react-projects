@@ -7,7 +7,15 @@ export const InputWithSlider: FC<InputProps> = props => {
   const { input, slider, inputWrapper, underText } = useStyles();
   const { text, min, max, step, label, inputHandle, sliderHandle, value, blurHandle, placeholder } = props;
 
+  const formatter = new Intl.NumberFormat("ru", {
+    minimumFractionDigits: 0
+  });
+
   const checkedSliderValue = typeof value === 'number' ? value : min;
+
+  const checkedInputValue: number | string = typeof value === 'number'
+    ? formatter.format(value)
+    : '';
 
   return (
     <div>
@@ -20,7 +28,7 @@ export const InputWithSlider: FC<InputProps> = props => {
           placeholder={ placeholder }
           label={ label }
           variant='filled'
-          value={ typeof value === 'number' ? value.toLocaleString() : '' }
+          value={ checkedInputValue }
           id='sum'/>
 
         <Slider

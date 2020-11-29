@@ -1,11 +1,12 @@
 import React, { ChangeEvent, FC, FormEvent, useState } from "react";
-import { Container, Typography } from "@material-ui/core";
+import { Container, Typography, Select, MenuItem } from "@material-ui/core";
 import { InputWithSlider } from "./InputWithSlider";
 import { InputProps } from "./types";
 
 export const Calculator: FC = () => {
   const [sum, setSum] = useState<number | number[] | string>(50000);
   const [month, setMonth] = useState<number | number[] | string>(3);
+  const [currency, setCurrency] = React.useState('rub');
 
   const sumInputHandle = (event: FormEvent<any>, newValue: number | number[]) => setSum(newValue);
   const monthInputHandle = (event: FormEvent<any>, newValue: number | number[]) => setMonth(newValue);
@@ -59,6 +60,11 @@ export const Calculator: FC = () => {
     setMonth(value);
   };
 
+  const handleChangeCurr = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setCurrency(event.target.value as string);
+    console.log(event.target.value);
+  };
+
   const inputSumConfig: InputProps = {
     placeholder: '50 000 ₽',
     blurHandle: blurSumHandle,
@@ -110,11 +116,19 @@ export const Calculator: FC = () => {
               <InputWithSlider { ...inputMonthConfig }/>
 
               <div>
-                <select>
-                  <option defaultValue='Рубли РФ'>Рубли РФ</option>
-                  <option defaultValue='Доллары США'>Доллары США</option>
-                  <option defaultValue='Евро'>Евро</option>
-                </select>
+                <Select
+                  style={ {
+                    color: 'red'
+                  } }
+                  labelId='demo-customized-select-label'
+                  id='demo-customized-select'
+                  value={ currency }
+                  displayEmpty
+                  onChange={ handleChangeCurr }>
+                  <MenuItem value='rub'>Рубли РФ</MenuItem>
+                  <MenuItem value='usa'>Доллары США</MenuItem>
+                  <MenuItem value='eur'>Евро</MenuItem>
+                </Select>
               </div>
             </div>
 

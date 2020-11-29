@@ -58,8 +58,8 @@ export const useStyles = makeStyles(({ spacing, breakpoints, transitions: { easi
       position: 'relative',
 
       '&:before': {
-        width: '60%',
-        height: '60%',
+        width: '6px',
+        height: '6px',
         display: 'block',
         backgroundColor: '#fff',
         content: "''",
