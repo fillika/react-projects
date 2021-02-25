@@ -1,0 +1,62 @@
+{
+    "name": "support-build",
+    "version": "1.0.1",
+    "description": "Support build для работы на боевых версиях сайта",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "dev": "cross-env NODE_ENV=development webpack --mode=development --watch",
+        "build": "cross-env NODE_ENV=production webpack --mode=production"
+    },
+    "keywords": [],
+    "author": "Aleksandr M. (FiLLIKa)",
+    "license": "ISC",
+    "browserslist": [
+        "last 2 version",
+        "> 1%"
+    ],
+    "devDependencies": {
+        "@babel/core": "^7.12.10",
+        "@babel/plugin-proposal-class-properties": "^7.12.1",
+        "@babel/preset-env": "^7.13.5",
+        "@babel/preset-react": "^7.12.13",
+        "@testing-library/react": "^11.2.5",
+        "@types/jest": "^26.0.20",
+        "@types/react": "^17.0.0",
+        "@types/react-dom": "^17.0.0",
+        "babel-jest": "^26.6.3",
+        "babel-loader": "^8.2.2",
+        "clean-webpack-plugin": "^3.0.0",
+        "cross-env": "^7.0.3",
+        "css-loader": "^5.0.1",
+        "css-minimizer-webpack-plugin": "^1.2.0",
+        "file-loader": "^6.2.0",
+        "fork-ts-checker-webpack-plugin": "^6.1.0",
+        "jest": "^26.6.3",
+        "mini-css-extract-plugin": "^1.3.4",
+        "mini-svg-data-uri": "^1.2.3",
+        "node-sass": "^5.0.0",
+        "postcss-loader": "^4.2.0",
+        "postcss-preset-env": "^6.7.0",
+        "react-test-renderer": "^17.0.1",
+        "sass-loader": "^10.1.1",
+        "style-loader": "^2.0.0",
+        "terser-webpack-plugin": "^5.1.1",
+        "ts-jest": "^26.5.1",
+        "ts-loader": "^8.0.14",
+        "typescript": "^4.1.3",
+        "url-loader": "^4.1.1",
+        "webpack": "^5.17.0",
+        "webpack-cli": "^4.4.0"
+    },
+    "dependencies": {
+        "@types/react-redux": "^7.1.16",
+        "@types/redux": "^3.6.0",
+        "lodash": "^4.17.20",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-redux": "^7.2.2",
+        "redux": "^4.0.5",
+        "tslib": "^1.14.1"
+    }
+}

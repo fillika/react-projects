@@ -1,0 +1,29 @@
+@import './variables';
+@import './mixins';
+@import './common';
+@import './App';
+@import './blocks/load-square';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+// body {
+//   background-color: var(--bg-color, #fff);
+//   color: var(--text-main-color, #fff);
+// }
+
+img,
+svg {
+  width: 100%;
+}

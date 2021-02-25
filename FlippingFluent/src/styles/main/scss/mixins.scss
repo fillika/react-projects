@@ -1,0 +1,27 @@
+@mixin above($media) {
+  @media only screen and (min-width: $media) {
+    @content;
+  }
+}
+
+@mixin below($media) {
+  @media only screen and (max-width: $media) {
+    @content;
+  }
+}
+
+@mixin reduceMotion() {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+@mixin pixelRaito($media) {
+  @media (min-device-pixel-ratio: $media), (min-resolution: 120dpi) {
+    @content;
+  }
+
+  @media (-webkit-device-pixel-ratio: $media), (min-resolution: 120dpi) {
+    @content;
+  }
+}

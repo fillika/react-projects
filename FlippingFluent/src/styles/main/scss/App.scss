@@ -1,0 +1,30 @@
+.app {
+
+  margin: auto;
+
+  &[data-state] {
+    .ui-loading,
+    .ui-screen-half,
+    .ui-screen-full {
+      // position: absolute;
+      display: none;
+      background-color: #fff;
+    }
+  }
+
+  &[data-state='loading'] {
+    > .ui-loading {
+      display: flex;
+    }
+  }
+  &[data-state='half'] {
+    > .ui-screen-half {
+      display: flex;
+    }
+  }
+  &[data-state='full'] {
+    > .ui-screen-full {
+      display: flex;
+    }
+  }
+}
