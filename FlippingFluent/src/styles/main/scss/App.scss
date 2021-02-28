@@ -1,14 +1,14 @@
 .app {
-
   margin: auto;
 
   &[data-state] {
     .ui-loading,
     .ui-screen-half,
     .ui-screen-full {
-      // position: absolute;
+      --bg: rgba(255, 255, 255, 0.4);
+      background-color: var(--bg);
+      position: relative;
       display: none;
-      background-color: #fff;
     }
   }
 
@@ -24,7 +24,7 @@
   }
   &[data-state='full'] {
     > .ui-screen-full {
-      display: flex;
+      display: grid;
     }
   }
 }

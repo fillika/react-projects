@@ -6,6 +6,7 @@ body {
 }
 
 .ui-loading {
+  --finish-scale: calc(380 / 150);
   height: 150px;
   width: 310px;
   background-color: #fff;
@@ -13,22 +14,91 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  animation-name: finish-scale;
+  animation-delay: 3.5s;
+  animation-duration: 1000ms;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  animation-fill-mode: forwards;
+
+  @keyframes finish-scale {
+    from {
+      transform: scaleY(1);
+    }
+    to {
+      transform: scaleY(var(--finish-scale));
+    }
+  }
 }
 
+// ui-screen-half
 
+.ui-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  user-select: none;
+}
 
-// ui-screen-half 
+.ui-screen-half {
 
-.ui-screen-half  {
+  position: relative;
   height: 380px;
-  width: 300px;
-  background-color: #fff;
+  width: 310px;
+  background-color: var(--bg);
   box-shadow: 0 1rem 5rem rgba(black, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > .ui-heading {
+    transform: translateX(50%);
+    animation-name: fade-in-to-right;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+
+    @keyframes fade-in-to-right {
+      from {
+        transform: none;
+        opacity: 0;
+      }
+      to {
+        transform: translateX(50%);
+        opacity: 1;
+      }
+    }
+  }
 }
 
-.ui-screen-full  {
+.ui-screen-full {
   height: 460px;
   width: 615px;
   background-color: #fff;
   box-shadow: 0 1rem 5rem rgba(black, 0.3);
+  grid-template-columns: 2rem 10rem 1fr;
+}
+
+.ui-emails {
+  background-color: rgba(195, 203, 190, 0.2);
+}
+
+.ui-toolbar {
+  background-color: rgba(195, 203, 190, 0.5);
+}
+
+.ui-email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(white, 0.8);
+}
+
+.ui-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  background-color: var(--bg);
+  transition: 300ms;
 }

@@ -16,7 +16,6 @@
   animation-name: load-square-move;
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
-  // animation-iteration-count: infinite;
   opacity: 0;
   color: #fff;
 
@@ -44,7 +43,7 @@
 @keyframes load-square-move {
   0% {
     opacity: 0;
-    transform: translateX(-50vw) scale(0.35) skew(40deg);
+    transform: translateX(-50vw) scale(0.35) skew(30deg);
     animation-timing-function: cubic-bezier(0.62, 0.01, 0, 0.98);
   }
   40%,
@@ -54,7 +53,7 @@
   }
   100% {
     opacity: 0;
-    transform: translateX(50vw) scale(0.35) skew(-40deg);
+    transform: translateX(50vw) scale(0.35) skew(-30deg);
     animation-timing-function: cubic-bezier(0.92, 0.01, 0.51, 0.98);
   }
 }
